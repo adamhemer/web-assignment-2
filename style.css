@@ -1,0 +1,96 @@
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+.header {
+    box-shadow: 0px -0px 10px grey;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: #00a550;
+    padding: 20px 10px;
+    margin: 0;
+    font-weight: bold;
+}
+
+#logo-text {
+    /* text-shadow: 3px 3px #00582A; */
+    font-size: 30pt;
+    user-select: none;
+}
+
+#logo-text:active, #logo-text:hover {
+    text-shadow: 3px 3px #00582A;
+    background-color: #00a550;
+    color: white;
+}
+
+.header-right {
+    float: right;
+}
+
+.header a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    margin: 0 20px;
+    text-decoration: none;
+    font-size: 22px;
+    line-height: 25px;
+    border-radius: 4px;
+    text-shadow: 3px 3px #00582A;
+}
+
+.header a:hover {
+    text-shadow: none;
+    background-color: #ddd;
+    color: #00582A;
+}
+
+.footer {
+    background-color: #d3d3d3;
+    box-shadow: 0px -0px 10px grey;
+    color: black;
+}
+
+.footer table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.footer td {
+    vertical-align: top;
+    padding: 0px 20px;
+}
+
+.footer-base {
+    color: white;
+    background-color: #00582A;
+    font-size: 10pt;
+    padding: 0 30px;
+    overflow: hidden;
+}
+
+.footer-base p {
+    float: left;
+    margin: 20px 0;
+}
+
+.footer-base i {
+    float: right;
+    font-size: 30px;
+    padding: 0 10px;
+    margin: 20px 0;
+}
+
+.content {
+    min-height: 63%;
+}
+
+/* End of template */
