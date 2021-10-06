@@ -7,6 +7,10 @@ html, body {
     background-color: white;
 }
 
+a {
+    text-decoration: none;
+}
+
 .header {
     box-shadow: 0px -0px 10px grey;
     position: sticky;
@@ -19,7 +23,6 @@ html, body {
 }
 
 #logo-text {
-    /* text-shadow: 3px 3px #00582A; */
     font-size: 30pt;
     user-select: none;
 }
@@ -34,13 +37,16 @@ html, body {
     float: right;
 }
 
+.header {
+    z-index: 99;
+}
+
 .header a {
     float: left;
     color: white;
     text-align: center;
     padding: 12px 20px;
     margin: 0 20px;
-    text-decoration: none;
     font-size: 22px;
     line-height: 25px;
     border-radius: 4px;
@@ -90,7 +96,7 @@ html, body {
 }
 
 .content {
-    min-height: 63%;
+    min-height: 65%;
 }
 
 /* End of template */
