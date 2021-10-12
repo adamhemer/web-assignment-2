@@ -59,6 +59,11 @@ a {
   color: #00582a;
 }
 
+.navbar-active {
+  border-bottom: 4px solid white;
+  border-radius: 0 !important;
+}
+
 .footer {
   background-color: #d3d3d3;
   box-shadow: 0px -0px 10px grey;
