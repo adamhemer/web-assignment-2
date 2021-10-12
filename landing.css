@@ -1,6 +1,8 @@
 img {
   width: 100%;
   filter: brightness(20%);
+  height: 91vh;
+  overflow: hidden;
 }
 
 .hero-banner {
@@ -12,7 +14,7 @@ img {
   color: white;
   position: absolute;
   left: 50%;
-  top: 30vh;
+  top: 42vh;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -27,7 +29,7 @@ img {
   border-radius: 6px;
   background-color: transparent;
   font-size: 22pt;
-  top: 50vh;
+  top: 61vh;
   width: 220px;
   padding: 5px;
 }
