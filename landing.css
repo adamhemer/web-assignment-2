@@ -5,14 +5,14 @@ img {
 
 .hero-banner {
   overflow: hidden;
-  height: 92vh;
+  width: 100%;
 }
 
 .hero-overlay {
   color: white;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 30vh;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -27,7 +27,7 @@ img {
   border-radius: 6px;
   background-color: transparent;
   font-size: 22pt;
-  top: 70%;
+  top: 50vh;
   width: 220px;
   padding: 5px;
 }
