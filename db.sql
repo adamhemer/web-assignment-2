@@ -6,7 +6,7 @@ CREATE DATABASE dsa;
 USE dsa;
 
 CREATE TABLE Product (
-    id          CHAR(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id          CHAR(4) NOT NULL PRIMARY KEY,
     name        varchar(100),
     description VARCHAR(200)
 ) AUTO_INCREMENT = 1;
@@ -18,11 +18,11 @@ INSERT INTO Product VALUES ("M001", "Blue Dream", "Hybrid");
 INSERT INTO Product VALUES ("M002", "OG Kush", "Hybrid");
 INSERT INTO Product VALUES ("M003", "Pineapple Express", "Hybrid");
 INSERT INTO Product VALUES ("M004", "White Widow", "Hybrid");
-INSERT INTO Product VALUES ("M005", "AK-47", "Hybrid"):
-INSERT INTO Product VALUES ("M006", "Blue Diesel", "Hybrid"):
+INSERT INTO Product VALUES ("M005", "AK-47", "Hybrid");
+INSERT INTO Product VALUES ("M006", "Blue Diesel", "Hybrid");
 INSERT INTO Product VALUES ("M007", "Black Jack", "Hybrid");
 INSERT INTO Product VALUES ("M008", "Key Lime Pie", "Hybrid");
-INSERT INTO Product VALUES ("M009", "Nothern Lights". "Indica");
+INSERT INTO Product VALUES ("M009", "Nothern Lights", "Indica");
 INSERT INTO Product VALUES ("M010", "Bubba Kush", "Indica");
 INSERT INTO Product VALUES ("M011", "Black Mamba", "Indica");
 INSERT INTO Product VALUES ("M012", "Death Star", "Indica");
