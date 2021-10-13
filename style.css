@@ -1,3 +1,8 @@
+:root {
+    --primary-colour: #00a550;
+    --secondary-colour: #00582a;
+}
+
 html,
 body {
   width: 100%;
@@ -19,8 +24,8 @@ a {
 
 #logo-text:active,
 #logo-text:hover {
-  text-shadow: 3px 3px #00582a;
-  background-color: #00a550;
+  text-shadow: 3px 3px var(--secondary-colour);
+  background-color: var(--primary-colour);
   color: white;
 }
 
@@ -30,7 +35,7 @@ a {
   top: 0;
   width: 100%;
   overflow: auto;
-  background-color: #00a550;
+  background-color: var(--primary-colour);
   padding: 20px 0;
   margin: 0;
   font-weight: bold;
@@ -50,13 +55,13 @@ a {
   font-size: 22px;
   line-height: 25px;
   border-radius: 4px;
-  text-shadow: 3px 3px #00582a;
+  text-shadow: 3px 3px var(--secondary-colour);
 }
 
 .navbar a:hover {
   text-shadow: none;
   background-color: #ddd;
-  color: #00582a;
+  color: var(--secondary-colour);
 }
 
 .navbar-active {
@@ -83,7 +88,7 @@ a {
 
 .footer-base {
   color: white;
-  background-color: #00582a;
+  background-color: var(--secondary-colour);
   font-size: 10pt;
   padding: 0 30px;
   overflow: hidden;
