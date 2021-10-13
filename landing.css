@@ -38,3 +38,13 @@ img {
   background-color: white;
   color: black;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+article {
+  display: flex;
+  flex-flow: column;
+}
