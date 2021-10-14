@@ -36,4 +36,4 @@ INSERT INTO Product VALUES ("E001", 99.99, 100, "Berocca", "");
 INSERT INTO Product VALUES ("E002", 99.99, 100, "Gummis", "");
 INSERT INTO Product VALUES ("E003", 99.99, 100, "CBD Oil Tincture", "");
 INSERT INTO Product VALUES ("E004", 99.99, 100, "Brownies", "Vegan, Gluten Free Infused Brownies");
-INSERT INTO Product VALUES ("E005", 99.99, 100, "Tea Bad", "");
+INSERT INTO Product VALUES ("E005", 99.99, 100, "Tea Bag", "");
