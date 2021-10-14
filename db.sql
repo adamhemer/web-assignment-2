@@ -13,6 +13,11 @@ CREATE TABLE Product (
     description VARCHAR(200)
 ) AUTO_INCREMENT = 1;
 
+CREATE TABLE Cart (
+    id          CHAR(4) NOT NULL PRIMARY KEY,
+    quantity    INT
+);
+
 CREATE user IF NOT EXISTS dbadmin@localhost;
 GRANT all privileges ON *.* TO dbadmin@localhost;
 
