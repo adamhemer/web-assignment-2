@@ -109,7 +109,7 @@ a {
 }
 
 .main-content {
-  min-height: 80%;
+  min-height: calc(100vh - 89px - 202px);
 }
 
 /* @media (min-width: 576px) {
