@@ -22,16 +22,16 @@
       <a href="landing.html" id="logo-text">DispensarySA</a>
       <div class="navbar-right">
         <a href="landing.html">Home <i class="fa fa-home"></i></a>
-        <a class="navbar-active" href="shop.html">Shop <i class="fa fa-shopping-bag"></i></a>
+        <a class="navbar-active" href="shop.php">Shop <i class="fa fa-shopping-bag"></i></a>
         <a href="about_us.html">About <i class="fa fa-info-circle"></i></a>
         <a href="cart.html">Cart <i class="fa fa-shopping-cart"></i></a>
       </div>
     </nav>
     <div class="main-content">
       <div class="shop-header">
-        <a href="shop.html">Shop</a>
+        <a href="">Shop</a>
         >
-        <a href="shop.html">All Products</a>
+        <a href="">All Products</a>
       </div>
       <table class="shop-content">
         <tr>
