@@ -9,8 +9,8 @@
       content="A simple HTML5 Template for new projects."
     />
     <meta name="Group 10" content="DispensarySA" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="shop.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/shop.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
