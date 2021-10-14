@@ -15,6 +15,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script src="shop.js"></script>
   </head>
 
   <body>
@@ -38,11 +39,11 @@
           <td class="shop-sidebar">
             <div class="shop-filters">
               <p class="filter-headings">Sort By</p>
-              <select class="filter-select">
-                <option value="Alphabetical A-Z">Name: A-Z</option>
-                <option value="Alphabetical Z-A">Name: Z-A</option>
-                <option value="Price Descending">Price: Low-High</option>
-                <option value="Price Ascending">Price: High-Low</option>
+              <select class="filter-select" onchange="sort(this.value)">
+                <option value="0">Name: A-Z</option>
+                <option value="1">Name: Z-A</option>
+                <option value="2">Price: Low-High</option>
+                <option value="3">Price: High-Low</option>
               </select>
               <hr>
               <p class="filter-headings">Categories</p>
@@ -51,6 +52,7 @@
               <br>
               <input type="checkbox" name="cat2">
               <label for="cat2">Category 2</label>
+              <button onclick="sort()">Sort</button>
             </div>
           </td>
           <td id="prdl" class="shop-products">
