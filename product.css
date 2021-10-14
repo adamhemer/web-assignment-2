@@ -33,15 +33,15 @@
     padding: 30px;
 }
 
-h1 {
+.product-info h1 {
     margin: 8px 0;
 }
 
-h2 {
+.product-info h2 {
     margin: 0;
 }
 
-p {
+.product-info p {
     margin: 10px 0;
 }
 

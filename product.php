@@ -25,7 +25,7 @@
         <a href="landing.html">Home <i class="fa fa-home"></i></a>
         <a class="navbar-active" href="">Shop <i class="fa fa-shopping-bag"></i></a>
         <a href="about_us.html">About <i class="fa fa-info-circle"></i></a>
-        <a href="cart.html">Cart <i class="fa fa-shopping-cart"></i></a>
+        <a href="cart.php">Cart <i class="fa fa-shopping-cart"></i></a>
       </div>
     </nav>
     <div class="main-content">
@@ -54,7 +54,7 @@
         <table class="content-table">
           <tr>
             <td class="center-image">
-              <img class="product-image" src="img/M001.png" alt="">
+              <img class="product-image" src="img/<?php echo $product["id"]; ?>.png" alt="">
             </td>
             <td>
               <div class="product-info">
