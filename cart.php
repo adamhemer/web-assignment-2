@@ -15,6 +15,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script src="cart.js"></script>
   </head>
 
   <body>
@@ -42,26 +43,32 @@
           <?php
             require_once "lib/dbconn.php";
 
+            function toFixed($input, $decimals) {
+              return number_format($input, $decimals, '.', '');
+            }
+
             $sql = "SELECT * FROM Cart c JOIN Product p ON c.id = p.id ORDER BY name ASC;";
-        
+            $total = 0;
             if ($result = mysqli_query($conn, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo '<tr><td><a class="cart-item-name" href="product.php?id=' . $row["id"] . '">';
                         echo $row["name"];
                         echo "</a></td><td>";
-                        echo '<form method="POST" action="lib/remove.php"><input type="hidden" name="product-id" value="' . $row["id"] . '"><input class="remove-button" type="submit" value="x"></form>';
+                        echo '<form method="POST" action="lib/cart-remove.php"><input type="hidden" name="product-id" value="' . $row["id"] . '"><input class="remove-button" type="submit" value="x"></form>';
                         echo "</td><td>";
-                        echo $row["price"];
+                        echo toFixed($row["price"], 2);
                         echo "</td><td>";
                         echo $row["quantity"];
                         echo "</td><td>";
-                        echo $row["price"] * $row["quantity"];
+                        echo toFixed($row["price"] * $row["quantity"], 2);
                         echo "</td></tr>";
+                        $total += $row["price"] * $row["quantity"];
                     }
                 }
                 mysqli_free_result($result);
             }
+            echo '<div id="hidden-total" style="display: none">' . $total . "</div>";
             mysqli_close($conn);
           ?>
         </tbody>
@@ -70,7 +77,7 @@
           <td></td>
           <td></td>
           <td style="text-align: center; font-weight: bold;">Total:</td>
-          <td style="font-weight: bold;">$69.00</td>
+          <td id="cart-total" style="font-weight: bold;">$69.00</td>
         </tfoot>
       </table>
       <form action="lib/checkout.php" method="POST">
