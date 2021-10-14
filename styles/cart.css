@@ -25,17 +25,29 @@
     border-bottom: 1px solid var(--tertiary-colour);
 }
 
+.cart-item-name {
+    color: black;
+}
+
+.cart-item-name:hover {
+    text-decoration: underline;
+}
+
 #column-item {
-    width: 40%;
+    width: 65%;
 }
 
 #column-price, #column-quantity, #column-subtotal {
     width: 10%;
 }
 
-button {
+#column-remove {
+    width: 5%;
+}
+
+.checkout-button, .remove-button {
     width: 20%;
-    margin: 10px 5.25%;
+    margin: 0 1%;
     float: right;
     font-size: 14px;
     font-weight: bold;
@@ -47,7 +59,25 @@ button {
     outline: none;
 }
 
-button:hover {
+.remove-button {
+    height: 20px;
+    width: 20px;
+    font-weight: normal;
+    background-color: var(--background-colour);
+    padding: 0;
+    color: var(--tertiary-colour)
+}
+
+.remove-button:hover {
+    border: 1px solid black;
+    color: black;
+}
+
+.checkout-button:hover {
     background-color: var(--primary-colour);
     color: white;
+}
+
+tfoot td {
+    border: none !important;
 }

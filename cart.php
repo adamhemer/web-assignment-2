@@ -32,51 +32,50 @@
         <thead>
           <tr>
             <th id="column-item">Item</th>
+            <th id="column-remove"></th>
             <th id="column-price">Price</th>
             <th id="column-quantity">Quantity</th>
             <th id="column-subtotal">Sub-Total</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Item</td>
-            <td>$2.00</td>
-            <td>7</td>
-            <td>$14.00</td>
-          </tr>
-          <tr>
-            <td>Item</td>
-            <td>$2.00</td>
-            <td>7</td>
-            <td>$14.00</td>
-          </tr>
-          <tr>
-            <td>Item</td>
-            <td>$2.00</td>
-            <td>7</td>
-            <td>$14.00</td>
-          </tr>
-          <tr>
-            <td>Item</td>
-            <td>$2.00</td>
-            <td>7</td>
-            <td>$14.00</td>
-          </tr>
-          <tr>
-            <td>Item</td>
-            <td>$2.00</td>
-            <td>7</td>
-            <td>$14.00</td>
-          </tr>
+          <?php
+            require_once "lib/dbconn.php";
+
+            $sql = "SELECT * FROM Cart c JOIN Product p ON c.id = p.id ORDER BY name ASC;";
+        
+            if ($result = mysqli_query($conn, $sql)) {
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '<tr><td><a class="cart-item-name" href="product.php?id=' . $row["id"] . '">';
+                        echo $row["name"];
+                        echo "</a></td><td>";
+                        echo '<form method="POST" action="lib/remove.php"><input type="hidden" name="product-id" value="' . $row["id"] . '"><input class="remove-button" type="submit" value="x"></form>';
+                        echo "</td><td>";
+                        echo $row["price"];
+                        echo "</td><td>";
+                        echo $row["quantity"];
+                        echo "</td><td>";
+                        echo $row["price"] * $row["quantity"];
+                        echo "</td></tr>";
+                    }
+                }
+                mysqli_free_result($result);
+            }
+            mysqli_close($conn);
+          ?>
         </tbody>
         <tfoot>
-          <td style="border: none;"></td>
-          <td style="border: none;"></td>
+          <td></td>
+          <td></td>
+          <td></td>
           <td style="text-align: center; font-weight: bold;">Total:</td>
           <td style="font-weight: bold;">$69.00</td>
         </tfoot>
       </table>
-      <button class="checkout-button">Checkout</button>
+      <form action="lib/checkout.php" method="POST">
+          <input class="checkout-button" type="submit" value="Checkout">
+      </form>
     </div>
     <div class="footer">
       <table>

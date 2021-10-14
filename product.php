@@ -23,7 +23,7 @@
       <a href="landing.html" id="logo-text">DispensarySA</a>
       <div class="navbar-right">
         <a href="landing.html">Home <i class="fa fa-home"></i></a>
-        <a class="navbar-active" href="">Shop <i class="fa fa-shopping-bag"></i></a>
+        <a class="navbar-active" href="shop.php">Shop <i class="fa fa-shopping-bag"></i></a>
         <a href="about_us.html">About <i class="fa fa-info-circle"></i></a>
         <a href="cart.php">Cart <i class="fa fa-shopping-cart"></i></a>
       </div>
@@ -40,7 +40,7 @@
         <?php
           require_once "lib/dbconn.php";
 
-          $sql = 'SELECT id, price, quantity, name, description FROM Product WHERE id="' . $_GET["id"] . '";';
+          $sql = 'SELECT * FROM Product WHERE id="' . $_GET["id"] . '";';
 
           if ($result = mysqli_query($conn, $sql)) {
             if (mysqli_num_rows($result) > 0) {
@@ -59,7 +59,7 @@
             <td>
               <div class="product-info">
                 <h1><?php echo $product["name"]; ?></h1>
-                <h2>$<?php echo $product["price"]; ?><span id="quantity"> / <?php echo $product["quantity"]; ?>g</span></h2>
+                <h2>$<?php echo $product["price"]; ?><span id="quantity"> / <?php echo $product["size"]; ?>g</span></h2>
                 <p><?php echo $product["description"]; ?></p>
                 <form action="lib/add-to-cart.php" method="POST">
                   <input type="hidden" name="product-id" value="<?php echo $product["id"]; ?>">

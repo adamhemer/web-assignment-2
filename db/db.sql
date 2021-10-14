@@ -8,7 +8,7 @@ USE dsa;
 CREATE TABLE Product (
     id          CHAR(4) NOT NULL PRIMARY KEY,
     price       DECIMAL(4, 2),
-    quantity    INT,
+    size        INT,
     name        varchar(100),
     description VARCHAR(200)
 ) AUTO_INCREMENT = 1;

@@ -57,14 +57,14 @@
             <?php
             require_once "lib/dbconn.php";
 
-            $sql = "SELECT id, price, quantity, name, description FROM Product;";
+            $sql = "SELECT * FROM Product;";
 
-            function product($id, $price, $quantity, $name, $description) {
+            function product($id, $price, $size, $name, $description) {
               echo '<a id="prd" href="product.php?id=' . $id . '" class="shop-item">';
               echo '<img src="img/' . $id . '.png" alt="">';
               echo '<h3 class="item-name">' . $name . '</h3>';
               echo '<h3 class="item-price">' . $price . '</h3>';
-              echo '<p class="item-quantity">per' . $quantity . 'g</p>';
+              echo '<p class="item-quantity">per' . $size . 'g</p>';
               echo '<button>Add to cart</button>';
               echo '</a>';
             }
@@ -72,7 +72,7 @@
             if ($result = mysqli_query($conn, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        product($row["id"], $row["price"], $row["quantity"], $row["name"], $row["description"]);
+                        product($row["id"], $row["price"], $row["size"], $row["name"], $row["description"]);
                     }
                 }
                 mysqli_free_result($result);
