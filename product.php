@@ -11,6 +11,7 @@
     <meta name="Group 10" content="DispensarySA" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="shop.css" />
+    <link rel="stylesheet" href="product.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -32,46 +33,38 @@
         <a href="shop.html">Shop</a>
         >
         <a href="shop.html">All Products</a>
+        >
+        <a href="#">Product Name</a>
       </div>
-      <table class="shop-content">
-        <tr>
-          <td class="shop-sidebar">
-            <div class="shop-filters">
-              <p class="filter-headings">Sort By</p>
-              <select class="filter-select">
-                <option value="Alphabetical A-Z">Name: A-Z</option>
-                <option value="Alphabetical Z-A">Name: Z-A</option>
-                <option value="Price Descending">Price: Low-High</option>
-                <option value="Price Ascending">Price: High-Low</option>
-              </select>
-              <hr>
-              <p class="filter-headings">Categories</p>
-              <input type="checkbox" name="cat1">
-              <label for="cat1">Category 1</label>
-              <br>
-              <input type="checkbox" name="cat2">
-              <label for="cat2">Category 2</label>
-            </div>
-          </td>
-          <td id="prdl" class="shop-products">
-            <a id="prd" href="#" class="shop-item">
-              <img src="img/placeholder.jpg" alt="">
-              <h3 class="item-name">Product Name</h3>
-              <h3 class="item-price">$19.99</h3>
-              <p class="item-quantity">per 100g</p>
-              <button>Add to cart</button>
-            </a>
-          </td>
-        </tr>
-      </table>
+      <div class="product-content">
+        <?php
+          require_once "lib/dbconn.php";
+
+          // preg_match("/([\?&]id=)([^&]+)/", $_SERVER["REQUEST_URI"], $matches); // Find the ?id=xxx parameter in the url
+
+          $sql = 'SELECT id, price, quantity, name, description FROM Product WHERE id="' . $_GET["id"] . '";';
+
+          // function product($id, $price, $quantity, $name, $description) {
+          //   echo '<a id="prd" href="#" class="shop-item">';
+          //   echo '<img src="img/placeholder.jpg" alt="">';
+          //   echo '<h3 class="item-name">' . $name . '</h3>';
+          //   echo '<h3 class="item-price">' . $price . '</h3>';
+          //   echo '<p class="item-quantity">per' . $quantity . 'g</p>';
+          //   echo '<button>Add to cart</button>';
+          //   echo '</a>';
+          // }
+
+          if ($result = mysqli_query($conn, $sql)) {
+            if (mysqli_num_rows($result) > 0) {
+              $row = mysqli_fetch_assoc($result);
+              echo $row["id"] . " " . $row["name"];
+            }
+            mysqli_free_result($result);
+          }
+          mysqli_close($conn);
+        ?>
+      </div>
     </div>
-    <script>
-      var item = document.getElementById("prd");
-      var dest = document.getElementById("prdl");
-      for (let i = 0; i < 15; i++) {
-        dest.appendChild(item.cloneNode(true)); 
-      }
-    </script>
     <div class="footer">
       <table>
         <tr>
