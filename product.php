@@ -61,7 +61,7 @@
                 <h1><?php echo $product["name"]; ?></h1>
                 <h2>$<?php echo $product["price"]; ?><span id="quantity"> / <?php echo $product["quantity"]; ?>g</span></h2>
                 <p><?php echo $product["description"]; ?></p>
-                <form action="add-to-cart.php" method="POST">
+                <form action="lib/add-to-cart.php" method="POST">
                   <input type="hidden" name="product-id" value="<?php echo $product["id"]; ?>">
                   <input type="number" name="product-quantity" value="1" min="1">
                   <!-- <input type="submit" value="Add to cart"> -->
