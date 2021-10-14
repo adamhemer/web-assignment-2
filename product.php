@@ -51,7 +51,7 @@
           }
           mysqli_close($conn);
         ?>
-        <table>
+        <table class="content-table">
           <tr>
             <td class="center-image">
               <img class="product-image" src="img/M001.png" alt="">
