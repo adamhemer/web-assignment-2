@@ -23,7 +23,7 @@
       <a href="landing.html" id="logo-text">DispensarySA</a>
       <div class="navbar-right">
         <a href="landing.html">Home <i class="fa fa-home"></i></a>
-        <a class="navbar-active" href="shop.php">Shop <i class="fa fa-shopping-bag"></i></a>
+        <a class="navbar-active" href="">Shop <i class="fa fa-shopping-bag"></i></a>
         <a href="about_us.html">About <i class="fa fa-info-circle"></i></a>
         <a href="cart.html">Cart <i class="fa fa-shopping-cart"></i></a>
       </div>
@@ -40,29 +40,37 @@
         <?php
           require_once "lib/dbconn.php";
 
-          // preg_match("/([\?&]id=)([^&]+)/", $_SERVER["REQUEST_URI"], $matches); // Find the ?id=xxx parameter in the url
-
           $sql = 'SELECT id, price, quantity, name, description FROM Product WHERE id="' . $_GET["id"] . '";';
-
-          // function product($id, $price, $quantity, $name, $description) {
-          //   echo '<a id="prd" href="#" class="shop-item">';
-          //   echo '<img src="img/placeholder.jpg" alt="">';
-          //   echo '<h3 class="item-name">' . $name . '</h3>';
-          //   echo '<h3 class="item-price">' . $price . '</h3>';
-          //   echo '<p class="item-quantity">per' . $quantity . 'g</p>';
-          //   echo '<button>Add to cart</button>';
-          //   echo '</a>';
-          // }
 
           if ($result = mysqli_query($conn, $sql)) {
             if (mysqli_num_rows($result) > 0) {
-              $row = mysqli_fetch_assoc($result);
-              echo $row["id"] . " " . $row["name"];
+              global $product;
+              $product = mysqli_fetch_assoc($result);
             }
             mysqli_free_result($result);
           }
           mysqli_close($conn);
         ?>
+        <table>
+          <tr>
+            <td class="center-image">
+              <img class="product-image" src="img/M001.png" alt="">
+            </td>
+            <td>
+              <div class="product-info">
+                <h1><?php echo $product["name"]; ?></h1>
+                <h2>$<?php echo $product["price"]; ?><span id="quantity"> / <?php echo $product["quantity"]; ?>g</span></h2>
+                <p><?php echo $product["description"]; ?></p>
+                <form action="add-to-cart.php" method="POST">
+                  <input type="hidden" name="product-id" value="id">
+                  <input type="number" value="1" min="1">
+                  <!-- <input type="submit" value="Add to cart"> -->
+                  <button><i class="fa fa-shopping-cart"></i> Add to cart</button>
+                </form>
+              </div>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
     <div class="footer">
