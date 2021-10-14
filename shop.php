@@ -52,23 +52,38 @@
               <br>
               <input type="checkbox" name="cat2">
               <label for="cat2">Category 2</label>
-              <button onclick="sort()">Sort</button>
+              
             </div>
           </td>
           <td id="prdl" class="shop-products">
+
+            <a id="prd" href="#" class="shop-item">
+              <img src="img/placeholder.png" alt="">
+              <h3 class="item-name">Product Name</h3>
+              <h3 class="item-price">$19.99</h3>
+              <p class="item-quantity">per 100g</p>
+              <button>Add to cart</button>
+            </a>
             <?php
             require_once "lib/dbconn.php";
 
             $sql = "SELECT * FROM Product;";
 
             function product($id, $price, $size, $name, $description) {
-              echo '<a id="prd" href="product.php?id=' . $id . '" class="shop-item">';
+              // Div wrapper for styling
+              echo '<div class="shop-item">';
+              // Anchor to make the whole section clickable
+              echo '<a id="prd" href="product.php?id=' . $id . '">';
               echo '<img src="img/' . $id . '.png" alt="">';
               echo '<h3 class="item-name">' . $name . '</h3>';
               echo '<h3 class="item-price">' . $price . '</h3>';
-              echo '<p class="item-quantity">per' . $size . 'g</p>';
-              echo '<button>Add to cart</button>';
-              echo '</a>';
+              echo '<p class="item-quantity">per ' . $size . 'g</p></a>';
+              // Form with the product id and name, necessary for the add to cart button
+              echo '<form action="lib/cart-add.php" method="POST">';
+              echo '<input type="hidden" name="product-id" value="' . $id . '">';
+              echo '<input type="hidden" name="product-quantity" value="1">';
+              echo '<input type="submit" value="Add to cart"></form>';
+              echo '</div>';
             }
 
             if ($result = mysqli_query($conn, $sql)) {
@@ -81,24 +96,11 @@
             }
             mysqli_close($conn);
             ?>
-            <!-- <a id="prd" href="#" class="shop-item">
-              <img src="img/placeholder.jpg" alt="">
-              <h3 class="item-name">Product Name</h3>
-              <h3 class="item-price">$19.99</h3>
-              <p class="item-quantity">per 100g</p>
-              <button>Add to cart</button>
-            </a> -->
+
           </td>
         </tr>
       </table>
     </div>
-    <script>
-      // var item = document.getElementById("prd");
-      // var dest = document.getElementById("prdl");
-      // for (let i = 0; i < 15; i++) {
-      //   dest.appendChild(item.cloneNode(true)); 
-      // }
-    </script>
     <div class="footer">
       <table>
         <tr>
