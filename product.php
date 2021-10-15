@@ -64,7 +64,6 @@
                 <form action="lib/cart-add.php" method="POST">
                   <input type="hidden" name="product_id" value="<?php echo $product["product_id"]; ?>">
                   <input type="number" name="product_quantity" value="1" min="1">
-                  <!-- <input type="submit" value="Add to cart"> -->
                   <button><i class="fa fa-shopping-cart"></i> Add to cart</button>
                 </form>
               </div>

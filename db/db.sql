@@ -77,3 +77,9 @@ WHERE i.invoiceNo = pi.invoiceNo
 AND pi.id = p.id;
 
 INSERT INTO ProductInvoice SELECT invoice_no, product_id, quantity FROM Cart c, Invoice i WHERE i.invoice_no = 1999;
+
+
+SELECT SUM(c.quantity * p.price) FROM Cart c, Product p WHERE c.product_id = p.product_id;
+
+
+INSERT INTO Invoice(holder_name, card_number, expiry, cvv, total) VALUES ("Test man", "4567456745674567", "77/88", "420", (SELECT SUM(c.quantity * p.price) FROM Cart c, Product p WHERE c.product_id = p.product_id));

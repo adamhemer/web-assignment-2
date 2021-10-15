@@ -35,7 +35,7 @@
         <tr>
           <td>
             <h3>Payment Details</h3>
-            <form id="credit-card-form" name="credit-card-form" action="place-order.php" method="POST">
+            <form id="credit-card-form" name="credit-card-form" action="lib/place-order.php" method="POST">
               <label for="name">Name on card</label><br>
               <input name="name" type="text" placeholder="Name" maxlength=25 autocomplete="off" required><br>
               <label for="number">Card number</label><br>
