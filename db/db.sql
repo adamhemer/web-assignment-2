@@ -29,7 +29,7 @@ INSERT INTO Product VALUES ("M005", 19.82, 100, "AK-47", "Hybrid");
 INSERT INTO Product VALUES ("M006", 52.73, 100, "Blue Diesel", "Hybrid");
 INSERT INTO Product VALUES ("M007", 16.18, 100, "Black Jack", "Hybrid");
 INSERT INTO Product VALUES ("M008", 29.38, 100, "Key Lime Pie", "Hybrid");
-INSERT INTO Product VALUES ("M009", 61.57, 100, "Nothern Lights", "Indica");
+INSERT INTO Product VALUES ("M009", 61.57, 100, "Northern Lights", "Indica");
 INSERT INTO Product VALUES ("M010", 59.74, 100, "Bubba Kush", "Indica");
 INSERT INTO Product VALUES ("M011", 94.05, 100, "Black Mamba", "Indica");
 INSERT INTO Product VALUES ("M012", 16.52, 100, "Death Star", "Indica");
@@ -38,7 +38,7 @@ INSERT INTO Product VALUES ("M014", 44.82, 100, "Sunshine", "Sativa");
 INSERT INTO Product VALUES ("M015", 97.82, 100, "Dutch Hawaiian", "Sativa");
 
 INSERT INTO Product VALUES ("E001", 20.53, 100, "Berocca", "");
-INSERT INTO Product VALUES ("E002", 69.10, 100, "Gummis", "");
+INSERT INTO Product VALUES ("E002", 69.10, 100, "Gummies", "");
 INSERT INTO Product VALUES ("E003", 93.57, 100, "CBD Oil Tincture", "");
 INSERT INTO Product VALUES ("E004", 73.87, 100, "Brownies", "Vegan, Gluten Free Infused Brownies");
-INSERT INTO Product VALUES ("E005", 81.73, 100, "Tea Bag", "");
+INSERT INTO Product VALUES ("E005", 81.73, 100, "Tea Bags", "");
