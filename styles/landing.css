@@ -20,7 +20,8 @@
 }
 
 .hero-overlay-text {
-  font-size: 45pt;
+  font-size: 46pt;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: 80%;
 }
 
@@ -41,10 +42,20 @@
 
 .consultant-banner {
   margin: auto;
-  width: 40%;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 18px;
   padding-bottom: 30px;
+  background-color: var(--background-contrast-colour);
+  font-size: 16px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.vector-left {
+  align-items: left;
+}
+
+.vector-right {
+  align-items: right;
 }
 
 .consultant-button {
@@ -65,7 +76,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 60vh 60vh 60vh;
+  grid-template-rows: 55vh 55vh 55vh;
   gap: 0px 0px;
   grid-template-areas:
     "mission-image mission-text"
@@ -86,5 +97,8 @@
 }
 
 .grid-section-text {
+  padding-top: 50px;
   text-align: center;
+  font-size: 22px;
+  font-family: "Georgia", "Times New Roman", Times, serif;
 }
