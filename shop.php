@@ -47,11 +47,20 @@
               </select>
               <hr>
               <p class="filter-headings">Categories</p>
-              <input type="checkbox" name="cat1">
-              <label for="cat1">Category 1</label>
+              <input type="checkbox" name="m" onchange="setCategory('m')">
+              <label for="cat1">Marijuana</label>
               <br>
-              <input type="checkbox" name="cat2">
-              <label for="cat2">Category 2</label>
+              <input type="checkbox" name="e" onchange="setCategory('e')">
+              <label for="cat2">Edible</label>
+              <p class="filter-headings">Strains</p>
+              <input type="checkbox" name="indica" onchange="setStrain('indica')">
+              <label for="indica">Indica</label>
+              <br>
+              <input type="checkbox" name="sativa" onchange="setStrain('sativa')">
+              <label for="sativa">Sativa</label>
+              <br>
+              <input type="checkbox" name="hybrid" onchange="setStrain('hybrid')">
+              <label for="hybrid">Hybrid</label>
               
             </div>
           </td>
@@ -82,6 +91,9 @@
               echo '<input type="hidden" name="product-id" value="' . $id . '">';
               echo '<input type="hidden" name="product-quantity" value="1">';
               echo '<input type="submit" value="Add to cart"></form>';
+              // Hidden divs for JS to read when filtering/sorting
+              echo '<div style="display: none">' . $description . '</div>';
+              echo '<div style="display: none">' . $id . '</div>';
               echo '</div>';
             }
 
