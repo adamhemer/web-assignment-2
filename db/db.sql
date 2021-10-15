@@ -19,9 +19,13 @@ CREATE TABLE Cart (
 );
 
 CREATE TABLE Invoice (
-    invoice_no  INT PRIMARY KEY,
+    invoice_no  INT AUTO_INCREMENT PRIMARY KEY,
+    holder_name VARCHAR(25),
+    card_number CHAR(16),
+    expiry      CHAR(5),
+    cvv         CHAR(3),
     total       DECIMAL(8, 2)
-);
+) AUTO_INCREMENT = 1;
 
 CREATE TABLE ProductInvoice (
     invoice_no  INT,
@@ -56,16 +60,15 @@ INSERT INTO Product VALUES ("E004", 73.87, 063, "Brownies", "Vegan, Gluten Free 
 INSERT INTO Product VALUES ("E005", 81.73, 020, "Tea Bags", "Description needed");
 
 
-INSERT INTO Invoice VALUES (1001, 69.99);
-INSERT INTO Invoice VALUES (1420, 32684.32);
-INSERT INTO Invoice VALUES (1999, 0);
+INSERT INTO Invoice(holder_name, card_number, expiry, cvv, total) VALUES ("Mr John F Jenson", "4444333322221111", "11/22", "451", 3215.64);
+INSERT INTO Invoice(holder_name, card_number, expiry, cvv, total) VALUES ("Mr Adam B Hemer", "1111222233334444", "02/25", "525", 32684.32);
 
-INSERT INTO ProductInvoice VALUES (1001, "E001", 5);
-INSERT INTO ProductInvoice VALUES (1001, "M012", 3);
-INSERT INTO ProductInvoice VALUES (1001, "M009", 7);
+INSERT INTO ProductInvoice VALUES (1, "E001", 5);
+INSERT INTO ProductInvoice VALUES (1, "M012", 3);
+INSERT INTO ProductInvoice VALUES (1, "M009", 7);
 
-INSERT INTO ProductInvoice VALUES (1420, "E005", 172);
-INSERT INTO ProductInvoice VALUES (1420, "M015", 23);
+INSERT INTO ProductInvoice VALUES (2, "E005", 172);
+INSERT INTO ProductInvoice VALUES (2, "M015", 23);
 
 
 SELECT *
