@@ -55,7 +55,7 @@
                         echo '<tr><td><a class="cart-item-name" href="product.php?id=' . $row["product_id"] . '">';
                         echo $row["name"];
                         echo "</a></td><td>";
-                        echo '<form method="POST" action="lib/cart-remove.php"><input type="hidden" name="product-id" value="' . $row["id"] . '"><input class="remove-button" type="submit" value="x"></form>';
+                        echo '<form method="POST" action="lib/cart-remove.php"><input type="hidden" name="product-id" value="' . $row["product_id"] . '"><input class="remove-button" type="submit" value="x"></form>';
                         echo "</td><td>";
                         echo toFixed($row["price"], 2);
                         echo "</td><td>";
@@ -80,7 +80,7 @@
           <td id="cart-total" style="font-weight: bold;">$69.00</td>
         </tfoot>
       </table>
-      <form action="lib/checkout.php" method="POST">
+      <form action="checkout.php">
           <input class="checkout-button" type="submit" value="Checkout">
       </form>
     </div>
