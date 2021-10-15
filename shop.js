@@ -16,7 +16,8 @@ function sort(option) {
     var products = document.getElementsByClassName("shop-products")[0]; // Get the products parent node
 
     [...products.children]  // Convert the HTMLCollection to an array
-        .sort((a, b) => sortFunctions[option](a, b)) // Select a comparison function from the array
+        .filter(a => {})
+        .sort((a, b) => sortFunctions[option](a.children[0], b.children[0])) // Select a comparison function from the array
         .forEach(x => {
             products.appendChild(x);    // Move the node to its sorted position
         });

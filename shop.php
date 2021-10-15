@@ -56,14 +56,13 @@
             </div>
           </td>
           <td id="prdl" class="shop-products">
-
-            <a id="prd" href="#" class="shop-item">
+            <!-- <a id="prd" href="#" class="shop-item">
               <img src="img/placeholder.png" alt="">
               <h3 class="item-name">Product Name</h3>
               <h3 class="item-price">$19.99</h3>
               <p class="item-quantity">per 100g</p>
               <button>Add to cart</button>
-            </a>
+            </a> -->
             <?php
             require_once "lib/dbconn.php";
 
@@ -74,7 +73,7 @@
               echo '<div class="shop-item">';
               // Anchor to make the whole section clickable
               echo '<a id="prd" href="product.php?id=' . $id . '">';
-              echo '<img src="img/' . $id . '.png" alt="">';
+              echo '<img src="img/prod/' . preg_replace("/\s/", "-", strtolower($name)) . '.png" alt="">';
               echo '<h3 class="item-name">' . $name . '</h3>';
               echo '<h3 class="item-price">' . $price . '</h3>';
               echo '<p class="item-quantity">per ' . $size . 'g</p></a>';
