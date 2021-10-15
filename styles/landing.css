@@ -1,4 +1,4 @@
-img {
+.hero-image {
   width: 100%;
   filter: brightness(20%);
   height: 91vh;
@@ -39,49 +39,52 @@ img {
   color: black;
 }
 
+.consultant-banner {
+  margin: auto;
+  width: 40%;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.consultant-button {
+  border: 3px solid white;
+  border-radius: 6px;
+  background-color: transparent;
+  font-size: 22pt;
+  top: 61vh;
+  width: 220px;
+  padding: 5px;
+}
+
+.consultant-button:hover {
+  background-color: white;
+  color: black;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 60vh 60vh 60vh;
   gap: 0px 0px;
   grid-template-areas:
-    "Mission-Image Mission-Text"
-    "Regulation-Text Regulation-Image"
-    "Certification-Image Certification-Text";
+    "mission-image mission-text"
+    "regulation-text regulation-image"
+    "certification-image certification-text";
   justify-content: center;
   align-content: center;
-  justify-items: center;
-  align-items: center;
-  width: 100%;
-  height: 50%;
-}
-.Mission-Image {
-  grid-area: Mission-Image;
   width: 100%;
   height: 100%;
 }
-.Mission-Text {
-  grid-area: Mission-Text;
-  width: 100%;
-  height: 100%;
+
+.grid-section > img {
+  max-width: 50vw;
 }
-.Regulation-Text {
-  grid-area: Regulation-Text;
-  width: 100%;
-  height: 100%;
+
+.grid-section {
+  background-color: var(--info-grid-primary-colour);
 }
-.Regulation-Image {
-  grid-area: Regulation-Image;
-  width: 100%;
-  height: 100%;
-}
-.Certification-Text {
-  grid-area: Certification-Text;
-  width: 100%;
-  height: 100%;
-}
-.Certification-Image {
-  grid-area: Certification-Image;
-  width: 100%;
-  height: 100%;
+
+.grid-section-text {
+  text-align: center;
 }
