@@ -33,6 +33,7 @@
   top: 61vh;
   width: 220px;
   padding: 5px;
+  cursor: pointer;
 }
 
 .hero-overlay-button:hover {
@@ -42,35 +43,38 @@
 
 .consultant-banner {
   margin: auto;
+  width: 45vw;
+  max-width: 880px;
+  min-width: 550px;
+  height: 13vh;
   text-align: center;
   padding-top: 18px;
-  padding-bottom: 30px;
-  background-color: var(--background-contrast-colour);
+  padding-bottom: 16px;
   font-size: 16px;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.vector-left {
-  align-items: left;
+.float-left {
+  float: left;
+  margin: 30px 0 0 30px;
 }
 
-.vector-right {
-  align-items: right;
+.float-right {
+  float: right;
+  margin: 30px 35px 0 0;
 }
 
 .consultant-button {
-  border: 3px solid white;
-  border-radius: 6px;
+  border: none;
   background-color: transparent;
   font-size: 22pt;
-  top: 61vh;
-  width: 220px;
-  padding: 5px;
-}
-
-.consultant-button:hover {
-  background-color: white;
-  color: black;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: left;
+  color: var(--primary-text-colour);
+  width: 320px;
+  margin-top: 90px;
+  float: left;
+  cursor: pointer;
 }
 
 .grid-container {
@@ -86,19 +90,43 @@
   align-content: center;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+}
+
+.link {
+  color: rgb(76, 76, 209);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .grid-section > img {
-  max-width: 50vw;
+  height: 650px;
 }
 
 .grid-section {
+  display: flex;
+  flex-direction: column;
   background-color: var(--info-grid-primary-colour);
+  max-width: 1000px;
+  height: 650px;
 }
 
 .grid-section-text {
+  width: 75%;
+  max-width: 75%;
   padding-top: 50px;
-  text-align: center;
+  margin-left: 12%;
+  text-align: left;
   font-size: 22px;
   font-family: "Georgia", "Times New Roman", Times, serif;
+}
+
+#mission-image,
+#mission-text {
+  background-color: #e9c561;
+}
+
+#certification-image,
+#certification-text {
+  background-color: #82b85d;
 }
