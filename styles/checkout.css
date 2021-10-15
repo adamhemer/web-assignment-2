@@ -1,0 +1,49 @@
+.main-content {
+    margin: 0 15%;
+}
+
+.cart-list {
+    padding-top: 0;
+}
+
+.content-divider {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#column-price, #column-quantity, #column-subtotal {
+    width: 20%;
+}
+
+label {
+    margin-left: 10%;
+    width: 100%;
+    font-weight: bold;
+}
+
+input {
+    width: calc(80% - 14px);
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+
+    margin: 5px 10% 15px;
+
+    height: 2em;
+    border: none;
+    border: 1px solid var(--tertiary-colour);
+    border-radius: 8px;
+}
+
+#credit-card-form {
+    padding: 30px 0;
+    margin-right: 15%;
+    border: 1px solid var(--tertiary-colour);
+    border-radius: 8px;
+}
+
+.content-divider td {
+    height: 20px;
+    padding: 10px;
+    vertical-align: top;
+}
