@@ -42,6 +42,7 @@
     border-radius: 8px;
     padding: 10px;
     margin: 10px;
+    background-color: var(--background-contrast-colour);
 }
 
 .shop-content {
@@ -62,6 +63,7 @@
     border-radius: 8px;
     color: black;
     text-align: center;
+    background-color: var(--background-contrast-colour);
 }
 
 .shop-item a {
