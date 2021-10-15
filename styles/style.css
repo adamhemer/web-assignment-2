@@ -3,6 +3,7 @@
     --secondary-colour: #00582a;
     --tertiary-colour: #d3d3d3;
     --background-colour: #fff;
+    --background-contrast-colour: #fcfcfc;
 }
 
 html,
@@ -32,7 +33,7 @@ a {
 }
 
 .navbar {
-  box-shadow: 0px -0px 10px grey;
+  box-shadow: 0px 0px 10px grey;
   position: sticky;
   top: 0;
   width: 100%;
@@ -73,7 +74,7 @@ a {
 
 .footer {
   background-color: var(--tertiary-colour);
-  box-shadow: 0px -0px 10px grey;
+  box-shadow: 0px 0px 10px grey;
   color: black;
 }
 
@@ -109,7 +110,7 @@ a {
 }
 
 .main-content {
-  min-height: 80%;
+  min-height: calc(100vh - 89px - 220px);
 }
 
 /* @media (min-width: 576px) {
