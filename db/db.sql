@@ -37,8 +37,8 @@ INSERT INTO Product VALUES ("M013", 11.27, 100, "Purple Haze", "Sativa");
 INSERT INTO Product VALUES ("M014", 44.82, 100, "Sunshine", "Sativa");
 INSERT INTO Product VALUES ("M015", 97.82, 100, "Dutch Hawaiian", "Sativa");
 
-INSERT INTO Product VALUES ("E001", 20.53, 100, "Berocca", "");
-INSERT INTO Product VALUES ("E002", 69.10, 100, "Gummies", "");
-INSERT INTO Product VALUES ("E003", 93.57, 100, "CBD Oil Tincture", "");
+INSERT INTO Product VALUES ("E001", 20.53, 100, "Berocca", "Description needed");
+INSERT INTO Product VALUES ("E002", 69.10, 100, "Gummies", "Description needed");
+INSERT INTO Product VALUES ("E003", 93.57, 100, "CBD Oil Tincture", "Description needed");
 INSERT INTO Product VALUES ("E004", 73.87, 100, "Brownies", "Vegan, Gluten Free Infused Brownies");
-INSERT INTO Product VALUES ("E005", 81.73, 100, "Tea Bags", "");
+INSERT INTO Product VALUES ("E005", 81.73, 100, "Tea Bags", "Description needed");
