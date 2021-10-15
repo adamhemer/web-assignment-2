@@ -47,12 +47,12 @@
               return number_format($input, $decimals, '.', '');
             }
 
-            $sql = "SELECT * FROM Cart c JOIN Product p ON c.id = p.id ORDER BY name ASC;";
+            $sql = "SELECT * FROM Cart c JOIN Product p ON c.product_id = p.product_id ORDER BY name ASC;";
             $total = 0;
             if ($result = mysqli_query($conn, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        echo '<tr><td><a class="cart-item-name" href="product.php?id=' . $row["id"] . '">';
+                        echo '<tr><td><a class="cart-item-name" href="product.php?id=' . $row["product_id"] . '">';
                         echo $row["name"];
                         echo "</a></td><td>";
                         echo '<form method="POST" action="lib/cart-remove.php"><input type="hidden" name="product-id" value="' . $row["id"] . '"><input class="remove-button" type="submit" value="x"></form>';

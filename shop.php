@@ -81,15 +81,15 @@
               // Div wrapper for styling
               echo '<div class="shop-item">';
               // Anchor to make the whole section clickable
-              echo '<a id="prd" href="product.php?id=' . $id . '">';
+              echo '<a id="prd" href="product.php?product_id=' . $id . '">';
               echo '<img src="img/prod/' . preg_replace("/\s/", "-", strtolower($name)) . '.png" alt="">';
               echo '<h3 class="item-name">' . $name . '</h3>';
               echo '<h3 class="item-price">' . $price . '</h3>';
               echo '<p class="item-quantity">per ' . $size . 'g</p></a>';
               // Form with the product id and name, necessary for the add to cart button
               echo '<form action="lib/cart-add.php" method="POST">';
-              echo '<input type="hidden" name="product-id" value="' . $id . '">';
-              echo '<input type="hidden" name="product-quantity" value="1">';
+              echo '<input type="hidden" name="product_id" value="' . $id . '">';
+              echo '<input type="hidden" name="product_quantity" value="1">';
               echo '<input type="submit" value="Add to cart"></form>';
               // Hidden divs for JS to read when filtering/sorting
               echo '<div style="display: none">' . $description . '</div>';
@@ -100,7 +100,7 @@
             if ($result = mysqli_query($conn, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        product($row["id"], $row["price"], $row["size"], $row["name"], $row["description"]);
+                        product($row["product_id"], $row["price"], $row["size"], $row["name"], $row["description"]);
                     }
                 }
                 mysqli_free_result($result);

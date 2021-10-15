@@ -40,7 +40,7 @@
         <?php
           require_once "lib/dbconn.php";
 
-          $sql = 'SELECT * FROM Product WHERE id="' . $_GET["id"] . '";';
+          $sql = 'SELECT * FROM Product WHERE product_id="' . $_GET["product_id"] . '";';
 
           if ($result = mysqli_query($conn, $sql)) {
             if (mysqli_num_rows($result) > 0) {
@@ -62,8 +62,8 @@
                 <h2>$<?php echo $product["price"]; ?><span id="quantity"> / <?php echo $product["size"]; ?>g</span></h2>
                 <p><?php echo $product["description"]; ?></p>
                 <form action="lib/cart-add.php" method="POST">
-                  <input type="hidden" name="product-id" value="<?php echo $product["id"]; ?>">
-                  <input type="number" name="product-quantity" value="1" min="1">
+                  <input type="hidden" name="product_id" value="<?php echo $product["product_id"]; ?>">
+                  <input type="number" name="product_quantity" value="1" min="1">
                   <!-- <input type="submit" value="Add to cart"> -->
                   <button><i class="fa fa-shopping-cart"></i> Add to cart</button>
                 </form>
