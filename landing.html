@@ -12,10 +12,10 @@
     <meta name="Group 10" content="DispensarySA" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/landing.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <script
+      src="https://kit.fontawesome.com/089f98c1d5.js"
+      crossorigin="anonymous"
+    ></script>
     <script>
       /* When the user hovers over the linked text, 
       show the dropdown content */
@@ -23,21 +23,19 @@
         document.getElementById("myDropdown").classList.toggle("show");
       }
 
-      function hideMenu() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-
-      // Close the dropdown if the user clicks outside of it
+      // Close the dropdown if the user moves the mouse away from dropbtn/dropmenu
       window.onclick = function (event) {
         if (!event.target.matches(".dropbtn")) {
           var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains("show")) {
-              openDropdown.classList.remove("show");
+          dropdowns.addEventListener("blur", (event) => {
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains("show")) {
+                openDropdown.classList.remove("show");
+              }
             }
-          }
+          });
         }
       };
     </script>
@@ -120,7 +118,10 @@
                 distributed Cannabinoid products, grown and produced locally in
                 our state-of-the-art laboratories.
               </p>
-              <button href="about_us.html" class="grid-button">
+              <button
+                class="grid-button"
+                onclick="window.open('about_us.html', '_self')"
+              >
                 Learn More About Us >
               </button>
             </div>
@@ -158,15 +159,35 @@
                   target="blank_"
                   >Queensland Health</a
                 >
-                <a href="#contact" target="blank_">Contact</a>
-                <a href="#contact" target="blank_">Contact</a>
-                <a href="#contact" target="blank_">Contact</a>
-                <a href="#contact" target="blank_">Contact</a>
-                <a href="#contact" target="blank_">Contact</a>
+                <a
+                  href="https://www2.health.vic.gov.au/public-health/drugs-and-poisons/medicinal-cannabis/patients-carers"
+                  target="blank_"
+                  >Vic Goverment</a
+                >
+                <a
+                  href="https://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/conditions/medicines/medicinal+cannabis/medicinal+cannabis+patient+access+in+south+australia"
+                  target="blank_"
+                  >SA Health</a
+                >
+                <a
+                  href="https://www.healthywa.wa.gov.au/Articles/A_E/Cannabis"
+                  target="blank_"
+                  >Healthy WA</a
+                >
                 <a
                   href="https://www.health.act.gov.au/sites/default/files/2018-09/Medicinal%20Cannabis%20-%20Patient%20Information_0.pdf"
                   target="blank_"
                   >ACT Health</a
+                >
+                <a
+                  href="https://health.nt.gov.au/professionals/medicines-and-poisons-control2/therapeutic-medicines-containing-cannabinoids-medicinal-cannabis"
+                  target="blank_"
+                  >NT Department of Health</a
+                >
+                <a
+                  href="https://www.health.tas.gov.au/psbtas/medicinal_cannabis"
+                  target="blank_"
+                  >Tasmanian Department of Health</a
                 >
               </div>
             </div>
@@ -196,7 +217,7 @@
               </p>
               <button
                 class="grid-button"
-                onclick=" window.open('https://www.hotdoc.com.au/','_blank')"
+                onclick="window.open('https://www.hotdoc.com.au/','_blank')"
               >
                 Speak With Your Doctor >
               </button>
@@ -214,20 +235,34 @@
             </td>
             <td>
               <h3>Contact Us</h3>
-              <p>Email: <a href="mailto:store@dispensarysa.com.au">store@dispensarysa.com.au</a></p>
+              <p>
+                Email:
+                <a href="mailto:store@dispensarysa.com.au"
+                  >store@dispensarysa.com.au</a
+                >
+              </p>
               <p>Ph: <a href="tel:1800-420-420">1800 420 420</a></p>
             </td>
             <td>
-              <h3>Follow Us</h3>
-              <p><a href="https://www.facebook.com">Facebook</a></p>
-              <p><a href="https://www.instagram.com">Instagram</a></p>
-              <p><a href="https://www.twitter.com">Twitter</a></p>
+              <h3>Location</h3>
+              <p>
+                <a href="https://goo.gl/maps/rCKphGHHkdzFn4vJ6"
+                  >420 King William Street</a
+                >
+              </p>
+              <p>Adelaide SA, 5000</p>
             </td>
             <td>
-              <h3>Location</h3>
-              <p><a href="https://goo.gl/maps/rCKphGHHkdzFn4vJ6">420 King William Street</a></p>
-              <p>Adelaide</p>
-              <p>SA 5000</p>
+              <h3>Follow Us</h3>
+              <a href="https://www.facebook.com">
+                <i class="fab fa-facebook-square socials"></i
+              ></a>
+              <a href="https://www.instagram.com"
+                ><i class="fab fa-instagram-square socials"></i
+              ></a>
+              <a href="https://www.twitter.com"
+                ><i class="fab fa-twitter-square socials"></i
+              ></a>
             </td>
           </tr>
         </table>

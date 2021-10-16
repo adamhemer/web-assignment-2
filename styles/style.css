@@ -78,13 +78,21 @@ a {
 .footer {
   background-color: var(--tertiary-colour);
   box-shadow: 0px 0px 10px grey;
-  color: black;
+  color: --primary-text-colour;
 }
 
 .footer table {
   width: 100%;
+  max-width: 1920px;
+  margin: auto;
+  border: solid 3px var(--primary-text-colour);
+  border-right: none;
+  border-left: none;
   table-layout: fixed;
   overflow: auto;
+  font-family: "Georgia", "Times New Roman", Times, serif;
+  padding-top: 5px;
+  padding-bottom: 30px;
 }
 
 .footer td {
@@ -110,23 +118,9 @@ a {
   margin: 20px 0;
 }
 
-.footer-base i {
-  float: right;
-  font-size: 30px;
-  padding: 0 10px;
-  margin: 20px 0;
-}
-
 .main-content {
   min-height: calc(100vh - 89px - 220px);
 }
-
-/* @media (min-width: 576px) {
-  .container {
-    width: 100%;
-    margin: 0 auto;
-  }
-} */
 
 @media screen and (min-width: 0px) and (max-width: 900px) {
   #logo-text {
