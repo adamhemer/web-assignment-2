@@ -64,29 +64,29 @@ INSERT INTO Product VALUES ("E005", 81.73, 020, "Tea Bags", "Description needed"
 
 -- Testing code
 
-INSERT INTO Invoice(holder_name, card_number, expiry, cvv, total) VALUES ("Mr John F Jenson", "4444333322221111", "11/22", "451", 3215.64);
-INSERT INTO Invoice(holder_name, card_number, expiry, cvv, total) VALUES ("Mr Adam B Hemer", "1111222233334444", "02/25", "525", 32684.32);
+-- INSERT INTO Invoice(holder_name, card_number, expiry, cvv, total) VALUES ("Mr John F Jenson", "4444333322221111", "11/22", "451", 3215.64);
+-- INSERT INTO Invoice(holder_name, card_number, expiry, cvv, total) VALUES ("Mr Adam B Hemer", "1111222233334444", "02/25", "525", 32684.32);
 
-INSERT INTO ProductInvoice VALUES (1, "E001", 5);
-INSERT INTO ProductInvoice VALUES (1, "M012", 3);
-INSERT INTO ProductInvoice VALUES (1, "M009", 7);
+-- INSERT INTO ProductInvoice VALUES (1, "E001", 5);
+-- INSERT INTO ProductInvoice VALUES (1, "M012", 3);
+-- INSERT INTO ProductInvoice VALUES (1, "M009", 7);
 
-INSERT INTO ProductInvoice VALUES (2, "E005", 172);
-INSERT INTO ProductInvoice VALUES (2, "M015", 23);
-
-
-SELECT i.invoice_no, i.holder_name, i.total, i.card_number, i.expiry, i.cvv, p.product_id, p.name, pi.quantity
-FROM Invoice i, ProductInvoice pi, Product p
-WHERE i.invoice_no = pi.invoice_no
-AND pi.product_id = p.product_id;
+-- INSERT INTO ProductInvoice VALUES (2, "E005", 172);
+-- INSERT INTO ProductInvoice VALUES (2, "M015", 23);
 
 
+-- SELECT i.invoice_no, i.holder_name, i.total, i.card_number, i.expiry, i.cvv, p.product_id, p.name, pi.quantity
+-- FROM Invoice i, ProductInvoice pi, Product p
+-- WHERE i.invoice_no = pi.invoice_no
+-- AND pi.product_id = p.product_id;
 
-INSERT INTO ProductInvoice SELECT invoice_no, product_id, quantity FROM Cart c, Invoice i WHERE i.invoice_no = 1999;
 
 
-SELECT SUM(c.quantity * p.price) FROM Cart c, Product p WHERE c.product_id = p.product_id;
+-- INSERT INTO ProductInvoice SELECT invoice_no, product_id, quantity FROM Cart c, Invoice i WHERE i.invoice_no = 1999;
 
 
-INSERT INTO Invoice(holder_name, card_number, expiry, cvv, total) VALUES ("Test man", "4567456745674567", "77/88", "420", (SELECT SUM(c.quantity * p.price) FROM Cart c, Product p WHERE c.product_id = p.product_id));
+-- SELECT SUM(c.quantity * p.price) FROM Cart c, Product p WHERE c.product_id = p.product_id;
+
+
+-- INSERT INTO Invoice(holder_name, card_number, expiry, cvv, total) VALUES ("Test man", "4567456745674567", "77/88", "420", (SELECT SUM(c.quantity * p.price) FROM Cart c, Product p WHERE c.product_id = p.product_id));
 
