@@ -37,13 +37,13 @@
             <h3>Payment Details</h3>
             <form id="credit-card-form" name="credit-card-form" action="lib/place-order.php" method="POST">
               <label for="name">Name on card</label><br>
-              <input value ="name" name="name" type="text" placeholder="Name" maxlength=25 autocomplete="off" required><br>
+              <input name="name" type="text" placeholder="Name" maxlength=25 autocomplete="off" required><br>
               <label for="number">Card number</label><br>
-              <input value="1234 1234 1234 1234" name="number" type="text" placeholder="1111 2222 3333 4444" maxlength=19 autocomplete="off" required><br>
+              <input name="number" type="text" placeholder="1111 2222 3333 4444" maxlength=19 autocomplete="off" required><br>
               <label for="expiry">Expiry date</label><br>
-              <input value="01/21" name="expiry" type="text" placeholder="01/21" autocomplete="off" required><br>
+              <input name="expiry" type="text" placeholder="01/21" autocomplete="off" required><br>
               <label for="cvv">CVV</label><br>
-              <input value="000" name="cvv" type="text" placeholder="000" autocomplete="off" required>
+              <input name="cvv" type="text" placeholder="000" autocomplete="off" required>
             </form>
           </td>
           <td>
