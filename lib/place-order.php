@@ -18,7 +18,6 @@ if (isset($_POST["name"], $_POST["number"], $_POST["expiry"], $_POST["cvv"])) {
     $success = mysqli_stmt_execute($statement);
     if ($success) {
         echo "Invoice created";
-        // header("location: ../cart.php");
     } else {
         echo mysqli_error($conn);
     }
@@ -38,7 +37,6 @@ if (isset($_POST["name"], $_POST["number"], $_POST["expiry"], $_POST["cvv"])) {
     $success = mysqli_stmt_execute($statement);
     if ($success) {
         echo "Products linked created";
-        // header("location: ../cart.php");
     } else {
         echo mysqli_error($conn);
     }
