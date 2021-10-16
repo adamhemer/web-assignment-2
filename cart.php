@@ -96,9 +96,9 @@
     <div class="footer">
       <table>
         <tr>
-        <td>
+          <td>
             <h3>About</h3>
-            <a href="about-us.html">About DispensarySA</a>
+            <a href="about_us.html">About DispensarySA</a>
           </td>
           <td>
             <h3>Contact Us</h3>
