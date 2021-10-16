@@ -56,16 +56,38 @@
               AND pi.product_id = p.product_id;
             ';
 
+            $colour_alternate = false;
+            $prev_invoice_no = 0;
+
             if ($result = mysqli_query($conn, $sql)) {
               if (mysqli_num_rows($result) > 0) {
                   while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<tr>';
-                    echo '<td>' . $row["invoice_no"] . '</td>';
-                    echo '<td>' . $row["holder_name"] . '</td>';
-                    echo '<td>' . $row["total"] . '</td>';
-                    echo '<td>' . $row["card_number"] . '</td>';
-                    echo '<td>' . $row["expiry"] . '</td>';
-                    echo '<td>' . $row["cvv"] . '</td>';
+                    // Check if the colour should alternate (new invoice)
+                    if ($row["invoice_no"] != $prev_invoice_no) {
+                      $colour_alternate = !$colour_alternate;
+                    }
+                    // Set background colour
+                    if ($colour_alternate) {
+                      echo '<tr class="colour-a">';
+                    } else {
+                      echo '<tr class="colour-b">';
+                    }
+
+                    // If this is a new invoice, write out the details once
+                    if ($row["invoice_no"] != $prev_invoice_no) {
+                      $prev_invoice_no = $row["invoice_no"];
+
+                      echo '<td>' . $row["invoice_no"] . '</td>';
+                      echo '<td>' . $row["holder_name"] . '</td>';
+                      echo '<td>' . $row["total"] . '</td>';
+                      echo '<td>' . $row["card_number"] . '</td>';
+                      echo '<td>' . $row["expiry"] . '</td>';
+                      echo '<td>' . $row["cvv"] . '</td>';
+                    } else {  // Otherwise skip the customer details
+                      echo '<td></td><td></td><td></td><td></td><td></td><td></td>';
+                    }
+                    
+                    // Write out the product
                     echo '<td>' . $row["product_id"] . '</td>';
                     echo '<td>' . $row["name"] . '</td>';
                     echo '<td>' . $row["quantity"] . '</td>';
