@@ -4,10 +4,7 @@
 }
 
 .main-content {
-    /* margin: 0 200px; */
     margin: 0 15%;
-    /* width: 1000px; */
-    /* margin: auto; */
 }
 
 .shop-header {
@@ -37,7 +34,7 @@
 
 .shop-filters {
     width: 85%;
-    height: 70vh;
+    height: 50vh;
     border: 1px solid var(--tertiary-colour);
     border-radius: 8px;
     padding: 10px;
