@@ -157,11 +157,21 @@ a {
   .grid-section p {
     padding-bottom: 50px !important;
   }
+  .dropdown-content {
+    top: 0px !important;
+    right: 0px !important;
+  }
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1550px) {
   .grid-section {
     font-size: 16px !important;
+    max-height: 40vh !important;
+    height: 40vh !important;
+  }
+  .dropdown-content {
+    top: 0px !important;
+    right: 0px !important;
   }
 }
 
