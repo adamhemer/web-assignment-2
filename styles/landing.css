@@ -1,9 +1,13 @@
 .hero-image {
   width: 100%;
   filter: brightness(20%);
-  height: 91vmin;
-  min-height: 91vh;
+  height: 92vmin;
+  min-height: 92vh;
   overflow: hidden;
+}
+
+.hero-section-container {
+  max-width: 2300px;
 }
 
 .hero-banner {
