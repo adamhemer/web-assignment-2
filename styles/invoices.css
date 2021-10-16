@@ -1,0 +1,16 @@
+.invoice-pane {
+    padding: 30px 5%;
+    width: 100%;
+    border-spacing: 0;
+}
+
+.invoice-pane th {
+    text-align: left;
+    background-color: var(--secondary-colour);
+    color: white;
+    font-weight: normal;
+}
+
+.invoice-pane td, .invoice-pane th {
+    padding: 5px;
+}

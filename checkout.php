@@ -129,9 +129,8 @@
         </tr>
       </table>
       <div class="footer-base">
-        <p>Copyright © 2021 Dispensary SA</p>
-        <!-- <i class="fa fa-cc-visa"></i> -->
-        <!-- <i class="fa fa-credit-card"></i> -->
+        <!-- Hidden link to the invoices page for testing and demonstration purposes -->
+        <p>Copyright <a style="color: white;" href="invoices.php">©</a> 2021 Dispensary SA</p>
       </div>
     </div>
   </body>
