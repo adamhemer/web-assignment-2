@@ -11,7 +11,6 @@
     <meta name="Group 10" content="DispensarySA" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/complete.css" />
-    <!-- <link rel="stylesheet" href="styles/checkout.css" /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -33,6 +32,7 @@
     <div class="main-content">
       <div class="center-div">
         <h3>Order placed!</h3>
+        <!-- Grab the invoice number from the URL and display it -->
         <h3>Your order number is <?php echo '#'; printf("%04d", $_GET["invoice_no"]); ?></h3>
         <a href="landing.html">Homepage</a>
       </div>
@@ -66,8 +66,6 @@
       </table>
       <div class="footer-base">
         <p>Copyright © 2021 Dispensary SA</p>
-        <!-- <i class="fa fa-cc-visa"></i> -->
-        <!-- <i class="fa fa-credit-card"></i> -->
       </div>
     </div>
   </body>

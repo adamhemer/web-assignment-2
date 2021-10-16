@@ -49,6 +49,7 @@
         <tbody>
           <?php
             require_once "lib/dbconn.php";
+            // Join the Invoice, ProductInvoice and Product tables to get the products linked to each invoice
             $sql = '
               SELECT i.invoice_no, i.holder_name, i.total, i.card_number, i.expiry, i.cvv, p.product_id, p.name, pi.quantity
               FROM Invoice i, ProductInvoice pi, Product p
@@ -59,6 +60,7 @@
             $colour_alternate = false;
             $prev_invoice_no = 0;
 
+            // Read through the results and print out each invoice and the assosciated products
             if ($result = mysqli_query($conn, $sql)) {
               if (mysqli_num_rows($result) > 0) {
                   while ($row = mysqli_fetch_assoc($result)) {

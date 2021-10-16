@@ -52,7 +52,7 @@
             if ($result = mysqli_query($conn, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        echo '<tr><td><a class="cart-item-name" href="product.php?id=' . $row["product_id"] . '">';
+                        echo '<tr><td><a class="cart-item-name" href="product.php?product_id=' . $row["product_id"] . '">';
                         echo $row["name"];
                         echo "</a></td><td>";
                         echo '<form method="POST" action="lib/cart-remove.php"><input type="hidden" name="product-id" value="' . $row["product_id"] . '"><input class="remove-button" type="submit" value="x"></form>';
