@@ -129,7 +129,7 @@ a {
   margin: 20px 0;
 }
 
-@media screen and (min-width: 0px) and (max-width: 1200px) {
+@media screen and (min-width: 0px) and (max-width: 900px) {
   #logo-text {
     font-size: 30px !important;
   }
@@ -140,16 +140,19 @@ a {
     top: 37vh !important;
   }
   .hero-image {
-    height: auto !important;
+    height: 70vmin !important;
     width: 100% !important;
-    min-height: 77vh !important;
+    min-height: 70vmin !important;
   }
   .hero-overlay-text {
-    font-size: 36pt !important;
+    font-size: 30pt !important;
+  }
+  .hero-overlay {
+    top: 30vh !important;
   }
   .hero-overlay-button {
-    top: 56vh !important;
-    font-size: 20pt !important;
+    top: 46vh !important;
+    font-size: 17pt !important;
   }
   .consultant-banner {
     font-size: 70% !important;
@@ -178,6 +181,21 @@ a {
 }
 
 @media screen and (min-width: 900px) and (max-width: 1200px) {
+  .hero-image {
+    height: 70vmin !important;
+    width: 100% !important;
+    min-height: 70vmin !important;
+  }
+  .hero-overlay-text {
+    font-size: 32pt !important;
+  }
+  .hero-overlay {
+    top: 34vh !important;
+  }
+  .hero-overlay-button {
+    font-size: 28px;
+    top: 52vh !important;
+  }
   .grid-section {
     font-size: 16px !important;
     max-height: 35vh !important;
