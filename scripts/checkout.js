@@ -6,6 +6,7 @@ const cvvExp = /\d{3}/; // Checks for 3 digits
 
 
 function validateCard() {
+
     var cardForm = document.forms["credit-card-form"];
 
     let number = cardForm["number"].value.replaceAll(' ', ''); // Get number and remove whitespace
@@ -21,6 +22,11 @@ function validateCard() {
     console.log("cvv: " + validCVV);
 
     if (validCard && validExpiry && validCVV) {
+        // Set form values to whitespace filtered values
+        cardForm["number"].value = number;
+        cardForm["expiry"].value = expiry;
+        cardForm["cvv"].value = cvv;
+
         cardForm.submit();
     }
 }

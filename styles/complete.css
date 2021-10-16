@@ -1,0 +1,14 @@
+.main-content {
+    text-align: center;
+}
+
+.center-div {
+    padding-top: 20%;
+    font-size: 30px;
+}
+
+.center-div a {
+    font-size: 20px;
+    color: black;
+    text-decoration: underline;
+}
