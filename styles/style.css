@@ -156,11 +156,44 @@ a {
   }
   .grid-section {
     font-size: 16px !important;
-    max-height: 40vh !important;
-    height: 40vh !important;
+    max-height: 30vh !important;
+    height: 30vh !important;
   }
-  .grid-section p {
-    padding-bottom: 50px !important;
+  .grid-section-text {
+    padding-top: 10px !important;
+  }
+  .grid-section-text p {
+    padding-bottom: 20px !important;
+  }
+  .grid-section h1 {
+    font-size: 24px !important;
+  }
+  .grid-section button {
+    font-size: 22px !important;
+  }
+  .dropdown-content {
+    top: 0px !important;
+    right: 0px !important;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  .grid-section {
+    font-size: 16px !important;
+    max-height: 35vh !important;
+    height: 35vh !important;
+  }
+  .grid-section-text {
+    padding-top: 10px !important;
+  }
+  .grid-section-text p {
+    padding-bottom: 40px !important;
+  }
+  .grid-section h1 {
+    font-size: 28px !important;
+  }
+  .grid-section button {
+    font-size: 22px !important;
   }
   .dropdown-content {
     top: 0px !important;
@@ -171,6 +204,8 @@ a {
 @media screen and (min-width: 1200px) and (max-width: 1550px) {
   .grid-section {
     font-size: 16px !important;
+    max-height: 40vh !important;
+    height: 40vh !important;
   }
   .dropdown-content {
     top: 0px !important;
