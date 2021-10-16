@@ -124,7 +124,7 @@
   flex-direction: column;
   background-color: var(--info-grid-primary-colour);
   max-width: 960px;
-  max-height: auto;
+  height: auto;
   width: 50vw;
   text-align: left;
   font-size: 22px;
@@ -139,14 +139,15 @@
 
 .grid-section-text p {
   padding-bottom: 80px;
+  line-height: 1.45em;
 }
 
 #mission-image,
 #mission-text {
-  background-color: #e9c561;
+  background-color: #dad288;
 }
 
-#certification-image,
-#certification-text {
-  background-color: #82b85d;
+#eligibility-image,
+#eligibility-text {
+  background-color: #e4c9a6;
 }

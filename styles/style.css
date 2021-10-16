@@ -116,10 +116,6 @@ a {
   min-height: calc(100vh - 89px - 220px);
 }
 
-:visited {
-  color: rgb(138, 76, 209);
-}
-
 /* @media (min-width: 576px) {
   .container {
     width: 100%;
