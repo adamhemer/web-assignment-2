@@ -45,6 +45,8 @@ if (isset($_POST["name"], $_POST["number"], $_POST["expiry"], $_POST["cvv"])) {
 
     mysqli_query($conn, $sql_empty_cart);
     echo "Cart emptied";
+
+    header("location: ../complete.php?invoice_no=" . $invoice_no);
 }
 
 
