@@ -19,7 +19,6 @@
     <script src="scripts/cart.js"></script>
     <script src="scripts/checkout.js"></script>
   </head>
-
   <body>
     <nav class="navbar">
       <a href="landing.html" id="logo-text">DispensarySA</a>
@@ -30,6 +29,7 @@
         <a class="navbar-active" href="cart.php">Cart <i class="fa fa-shopping-cart"></i></a>
       </div>
     </nav>
+    <!-- Page Content Start -->
     <div class="main-content">
       <table class="content-divider">
         <tr>
@@ -62,6 +62,7 @@
                 <?php
                   require_once "lib/dbconn.php";
 
+                  // Decimal formatting function
                   function toFixed($input, $decimals) {
                     return number_format($input, $decimals, '.', '');
                   }
@@ -72,6 +73,7 @@
                   if ($result = mysqli_query($conn, $sql)) {
                       if (mysqli_num_rows($result) > 0) {
                           while ($row = mysqli_fetch_assoc($result)) {
+                              // Create the table entries for each item
                               echo '<tr><td><a class="cart-item-name" href="product.php?product_id=' . $row["product_id"] . '">';
                               echo $row["name"];
                               echo "</a></td><td></td><td>";
@@ -79,13 +81,16 @@
                               echo "</td><td>";
                               echo $row["quantity"];
                               echo "</td><td>";
+                              // Calculate the subtotals
                               echo toFixed($row["price"] * $row["quantity"], 2);
                               echo "</td></tr>";
+                              // Add the subtotal to the grand total
                               $total += $row["price"] * $row["quantity"];
                           }
                       }
                       mysqli_free_result($result);
                   }
+                  // Put the total into a hidden div to pass to JS
                   echo '<div id="hidden-total" style="display: none">' . $total . "</div>";
                   mysqli_close($conn);
                 ?>
@@ -95,7 +100,8 @@
                 <td></td>
                 <td></td>
                 <td style="text-align: center; font-weight: bold;">Total:</td>
-                <td id="cart-total" style="font-weight: bold;">$69.00</td>
+                <!-- Display the total at the bottom, this value is filled in by JS automatically -->
+                <td id="cart-total" style="font-weight: bold;">?</td>
               </tfoot>
             </table>
           </td>
@@ -103,6 +109,7 @@
       </table>
       <button class="checkout-button" onclick="validateCard()">Place Order</button>
     </div>
+    <!-- Page Content End -->
     <div class="footer">
       <table>
         <tr>

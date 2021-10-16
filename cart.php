@@ -17,7 +17,6 @@
     />
     <script src="scripts/cart.js"></script>
   </head>
-
   <body>
     <nav class="navbar">
       <a href="landing.html" id="logo-text">DispensarySA</a>
@@ -28,6 +27,7 @@
         <a class="navbar-active" href="">Cart <i class="fa fa-shopping-cart"></i></a>
       </div>
     </nav>
+    <!-- Page Content Start -->
     <div class="main-content">
       <table class="cart-list">
         <thead>
@@ -43,31 +43,38 @@
           <?php
             require_once "lib/dbconn.php";
 
+            // Decimal formatting function
             function toFixed($input, $decimals) {
               return number_format($input, $decimals, '.', '');
             }
 
+            // Get the product details for the items in the cart to display on the page
             $sql = "SELECT * FROM Cart c JOIN Product p ON c.product_id = p.product_id ORDER BY name ASC;";
             $total = 0;
             if ($result = mysqli_query($conn, $sql)) {
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
+                        // Create the table entries for each item
                         echo '<tr><td><a class="cart-item-name" href="product.php?product_id=' . $row["product_id"] . '">';
                         echo $row["name"];
                         echo "</a></td><td>";
+                        // Creates a form and button that will submit and remove this item from the cart using lib/cart-remove.php
                         echo '<form method="POST" action="lib/cart-remove.php"><input type="hidden" name="product-id" value="' . $row["product_id"] . '"><input class="remove-button" type="submit" value="x"></form>';
                         echo "</td><td>";
                         echo toFixed($row["price"], 2);
                         echo "</td><td>";
                         echo $row["quantity"];
                         echo "</td><td>";
+                        // Calculate the subtotals
                         echo toFixed($row["price"] * $row["quantity"], 2);
                         echo "</td></tr>";
+                        // Add the subtotal to the grand total
                         $total += $row["price"] * $row["quantity"];
                     }
                 }
                 mysqli_free_result($result);
             }
+            // Put the total into a hidden div to pass to JS
             echo '<div id="hidden-total" style="display: none">' . $total . "</div>";
             mysqli_close($conn);
           ?>
@@ -77,13 +84,15 @@
           <td></td>
           <td></td>
           <td style="text-align: center; font-weight: bold;">Total:</td>
-          <td id="cart-total" style="font-weight: bold;">$69.00</td>
+          <!-- Display the total at the bottom, this value is filled in by JS automatically -->
+          <td id="cart-total" style="font-weight: bold;">?</td>
         </tfoot>
       </table>
       <form action="checkout.php">
           <input class="checkout-button" type="submit" value="Checkout">
       </form>
     </div>
+    <!-- Page Content End -->
     <div class="footer">
       <table>
         <tr>
