@@ -108,24 +108,24 @@
     <div class="footer">
       <table>
         <tr>
-          <td>
+        <td>
             <h3>About</h3>
-            <p>Text and Logos</p>
+            <a href="about-us.html">About DispensarySA</a>
           </td>
           <td>
             <h3>Contact Us</h3>
-            <p>Email: store@dispensarysa.com.au</p>
-            <p>Ph: 1800 420 420</p>
+            <p>Email: <a href="mailto:store@dispensarysa.com.au">store@dispensarysa.com.au</a></p>
+            <p>Ph: <a href="tel:1800-420-420">1800 420 420</a></p>
           </td>
           <td>
             <h3>Follow Us</h3>
-            <p>Facebook</p>
-            <p>Instagram</p>
-            <p>Twitter</p>
+            <p><a href="https://www.facebook.com">Facebook</a></p>
+            <p><a href="https://www.instagram.com">Instagram</a></p>
+            <p><a href="https://www.twitter.com">Twitter</a></p>
           </td>
           <td>
             <h3>Location</h3>
-            <p>420 King William Street</p>
+            <p><a href="https://goo.gl/maps/rCKphGHHkdzFn4vJ6">420 King William Street</a></p>
             <p>Adelaide</p>
             <p>SA 5000</p>
           </td>
