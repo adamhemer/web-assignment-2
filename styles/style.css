@@ -120,42 +120,11 @@ a {
 
 .main-content {
   min-height: calc(100vh - 89px - 220px);
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
-@media screen and (min-width: 0px) and (max-width: 900px) {
-  #logo-text {
-    font-size: 30px !important;
-  }
-  .navbar a {
-    font-size: 18px !important;
-  }
-  .hero-overlay {
-    top: 32vh !important;
-  }
-  .hero-image {
-    height: auto !important;
-    width: 100% !important;
-    min-height: 60vh !important;
-  }
-  .hero-overlay-text {
-    font-size: 32pt !important;
-  }
-  .hero-overlay-button {
-    top: 51vh !important;
-    font-size: 16pt !important;
-  }
-  .consultant-banner {
-    font-size: 70% !important;
-  }
-  .grid-section {
-    font-size: 16px !important;
-  }
-  .grid-section p {
-    font-size: 30px !important;
-  }
-}
-
-@media screen and (min-width: 900px) and (max-width: 1200px) {
+@media screen and (min-width: 0px) and (max-width: 1200px) {
   #logo-text {
     font-size: 30px !important;
   }
@@ -182,6 +151,8 @@ a {
   }
   .grid-section {
     font-size: 16px !important;
+    max-height: 40vh !important;
+    height: 40vh !important;
   }
   .grid-section p {
     padding-bottom: 50px !important;
@@ -197,13 +168,6 @@ a {
 @media screen and (min-width: 1550px) and (max-width: 1920px) {
   .grid-section {
     font-size: 18px !important;
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  .main-content {
-    max-width: 1920px;
-    margin: 0 auto;
   }
 }
 
