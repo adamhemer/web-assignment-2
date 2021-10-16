@@ -24,7 +24,7 @@ a {
 }
 
 #logo-text {
-  font-size: 30pt;
+  font-size: 36px;
   user-select: none;
 }
 
@@ -125,24 +125,88 @@ a {
     width: 100%;
     margin: 0 auto;
   }
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 100%;
-    margin: 0 auto;
-  }
 } */
 
-@media (min-width: 1920px) {
-  .container {
+@media screen and (min-width: 0px) and (max-width: 900px) {
+  #logo-text {
+    font-size: 30px !important;
+  }
+  .navbar a {
+    font-size: 18px !important;
+  }
+  .hero-overlay {
+    top: 32vh !important;
+  }
+  .hero-image {
+    height: auto !important;
+    width: 100% !important;
+    min-height: 60vh !important;
+  }
+  .hero-overlay-text {
+    font-size: 32pt !important;
+  }
+  .hero-overlay-button {
+    top: 51vh !important;
+    font-size: 16pt !important;
+  }
+  .consultant-banner {
+    font-size: 70% !important;
+  }
+  .grid-section {
+    font-size: 16px !important;
+  }
+  .grid-section p {
+    font-size: 30px !important;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  #logo-text {
+    font-size: 30px !important;
+  }
+  .navbar a {
+    font-size: 18px !important;
+  }
+  .hero-overlay {
+    top: 37vh !important;
+  }
+  .hero-image {
+    height: auto !important;
+    width: 100% !important;
+    min-height: 77vh !important;
+  }
+  .hero-overlay-text {
+    font-size: 36pt !important;
+  }
+  .hero-overlay-button {
+    top: 56vh !important;
+    font-size: 20pt !important;
+  }
+  .consultant-banner {
+    font-size: 70% !important;
+  }
+  .grid-section {
+    font-size: 16px !important;
+  }
+  .grid-section p {
+    padding-bottom: 50px !important;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1550px) {
+  .grid-section {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (min-width: 1550px) and (max-width: 1920px) {
+  .grid-section {
+    font-size: 18px !important;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .main-content {
     max-width: 1920px;
     margin: 0 auto;
   }
