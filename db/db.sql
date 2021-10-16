@@ -31,6 +31,8 @@ CREATE TABLE ProductInvoice (
     invoice_no  INT,
     product_id  CHAR(4),
     quantity    INT,
+    FOREIGN KEY (invoice_no) REFERENCES Invoice(invoice_no),
+    FOREIGN KEY (product_id) REFERENCES Product(product_id),
     PRIMARY KEY (invoice_no, product_id)
 );
 
