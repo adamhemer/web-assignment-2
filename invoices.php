@@ -49,6 +49,7 @@
         <tbody>
           <?php
             require_once "lib/dbconn.php";
+            // Join the Invoice, ProductInvoice and Product tables to get the products linked to each invoice
             $sql = '
               SELECT i.invoice_no, i.holder_name, i.total, i.card_number, i.expiry, i.cvv, p.product_id, p.name, pi.quantity
               FROM Invoice i, ProductInvoice pi, Product p
@@ -56,16 +57,39 @@
               AND pi.product_id = p.product_id;
             ';
 
+            $colour_alternate = false;
+            $prev_invoice_no = 0;
+
+            // Read through the results and print out each invoice and the assosciated products
             if ($result = mysqli_query($conn, $sql)) {
               if (mysqli_num_rows($result) > 0) {
                   while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<tr>';
-                    echo '<td>' . $row["invoice_no"] . '</td>';
-                    echo '<td>' . $row["holder_name"] . '</td>';
-                    echo '<td>' . $row["total"] . '</td>';
-                    echo '<td>' . $row["card_number"] . '</td>';
-                    echo '<td>' . $row["expiry"] . '</td>';
-                    echo '<td>' . $row["cvv"] . '</td>';
+                    // Check if the colour should alternate (new invoice)
+                    if ($row["invoice_no"] != $prev_invoice_no) {
+                      $colour_alternate = !$colour_alternate;
+                    }
+                    // Set background colour
+                    if ($colour_alternate) {
+                      echo '<tr class="colour-a">';
+                    } else {
+                      echo '<tr class="colour-b">';
+                    }
+
+                    // If this is a new invoice, write out the details once
+                    if ($row["invoice_no"] != $prev_invoice_no) {
+                      $prev_invoice_no = $row["invoice_no"];
+
+                      echo '<td>' . $row["invoice_no"] . '</td>';
+                      echo '<td>' . $row["holder_name"] . '</td>';
+                      echo '<td>' . $row["total"] . '</td>';
+                      echo '<td>' . $row["card_number"] . '</td>';
+                      echo '<td>' . $row["expiry"] . '</td>';
+                      echo '<td>' . $row["cvv"] . '</td>';
+                    } else {  // Otherwise skip the customer details
+                      echo '<td></td><td></td><td></td><td></td><td></td><td></td>';
+                    }
+                    
+                    // Write out the product
                     echo '<td>' . $row["product_id"] . '</td>';
                     echo '<td>' . $row["name"] . '</td>';
                     echo '<td>' . $row["quantity"] . '</td>';
@@ -84,24 +108,24 @@
     <div class="footer">
       <table>
         <tr>
-          <td>
+        <td>
             <h3>About</h3>
-            <p>Text and Logos</p>
+            <a href="about-us.html">About DispensarySA</a>
           </td>
           <td>
             <h3>Contact Us</h3>
-            <p>Email: store@dispensarysa.com.au</p>
-            <p>Ph: 1800 420 420</p>
+            <p>Email: <a href="mailto:store@dispensarysa.com.au">store@dispensarysa.com.au</a></p>
+            <p>Ph: <a href="tel:1800-420-420">1800 420 420</a></p>
           </td>
           <td>
             <h3>Follow Us</h3>
-            <p>Facebook</p>
-            <p>Instagram</p>
-            <p>Twitter</p>
+            <p><a href="https://www.facebook.com">Facebook</a></p>
+            <p><a href="https://www.instagram.com">Instagram</a></p>
+            <p><a href="https://www.twitter.com">Twitter</a></p>
           </td>
           <td>
             <h3>Location</h3>
-            <p>0 King William Street</p>
+            <p><a href="https://goo.gl/maps/rCKphGHHkdzFn4vJ6">420 King William Street</a></p>
             <p>Adelaide</p>
             <p>SA 5000</p>
           </td>

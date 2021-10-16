@@ -92,6 +92,11 @@ a {
   padding: 0px 20px;
 }
 
+.footer a {
+  text-decoration: underline;
+  color: black;
+}
+
 .footer-base {
   color: white;
   background-color: var(--secondary-colour);
