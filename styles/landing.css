@@ -52,8 +52,13 @@
   height: 13vmin;
   text-align: center;
   padding-top: 18px;
-  padding-bottom: 10px;
+  padding-bottom: -20px;
+  margin-bottom: 40px;
   font-family: Georgia, "Times New Roman", Times, serif;
+  border: solid 2px #333333;
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 
 .float-left {
@@ -66,19 +71,6 @@
   float: right;
   padding: 30px 35px 0 0;
   height: 3.8em;
-}
-
-.consultant-button {
-  border: none;
-  background-color: transparent;
-  font-size: 26px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  text-align: left;
-  color: var(--primary-text-colour);
-  width: 320px;
-  margin-top: 90px;
-  float: left;
-  cursor: pointer;
 }
 
 .grid-container {
@@ -96,6 +88,7 @@
 }
 
 .grid-button {
+  position: relative;
   border: none;
   background-color: transparent;
   font-size: 26px;
@@ -150,4 +143,36 @@
 #eligibility-image,
 #eligibility-text {
   background-color: #e4c9a6;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f1f1f1;
+  top: 25px;
+  right: 40px;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
 }

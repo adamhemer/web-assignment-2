@@ -16,6 +16,31 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script>
+      /* When the user hovers over the linked text, 
+      show the dropdown content */
+      function showMenu() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      function hideMenu() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function (event) {
+        if (!event.target.matches(".dropbtn")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
   </head>
 
   <body>
@@ -110,9 +135,40 @@
                 the link below to visit your local state government website for
                 more information.
               </p>
-              <button href="about_us.html" class="grid-button">
+              <button
+                onmouseover="showMenu()"
+                onmouseout="showMenu()"
+                class="grid-button dropbtn"
+              >
                 Visit Your Local Government Website >
               </button>
+              <div
+                onmouseover="showMenu()"
+                onmouseout="showMenu()"
+                id="myDropdown"
+                class="dropdown-content"
+              >
+                <a
+                  href="https://www.medicinalcannabis.nsw.gov.au/patients"
+                  target="blank_"
+                  >NSW Government</a
+                >
+                <a
+                  href="https://www.qld.gov.au/health/conditions/all/medicinal-cannabis"
+                  target="blank_"
+                  >Queensland Health</a
+                >
+                <a href="#contact" target="blank_">Contact</a>
+                <a href="#contact" target="blank_">Contact</a>
+                <a href="#contact" target="blank_">Contact</a>
+                <a href="#contact" target="blank_">Contact</a>
+                <a href="#contact" target="blank_">Contact</a>
+                <a
+                  href="https://www.health.act.gov.au/sites/default/files/2018-09/Medicinal%20Cannabis%20-%20Patient%20Information_0.pdf"
+                  target="blank_"
+                  >ACT Health</a
+                >
+              </div>
             </div>
           </div>
           <div id="regulation-image" class="grid-section">
@@ -169,7 +225,7 @@
             </td>
             <td>
               <h3>Location</h3>
-              <p>0 King William Street</p>
+              <p>420 King William Street</p>
               <p>Adelaide</p>
               <p>SA 5000</p>
             </td>
