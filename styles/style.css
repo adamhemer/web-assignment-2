@@ -165,10 +165,4 @@ a {
   }
 }
 
-@media screen and (min-width: 1550px) and (max-width: 1920px) {
-  .grid-section {
-    font-size: 18px !important;
-  }
-}
-
 /* End of template */
