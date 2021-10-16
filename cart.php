@@ -59,7 +59,7 @@
                         echo $row["name"];
                         echo "</a></td><td>";
                         // Creates a form and button that will submit and remove this item from the cart using lib/cart-remove.php
-                        echo '<form method="POST" action="lib/cart-remove.php"><input type="hidden" name="product-id" value="' . $row["product_id"] . '"><input class="remove-button" type="submit" value="x"></form>';
+                        echo '<form method="POST" action="lib/cart-remove.php"><input type="hidden" name="product_id" value="' . $row["product_id"] . '"><input class="remove-button" type="submit" value="x"></form>';
                         echo "</td><td>";
                         echo toFixed($row["price"], 2);
                         echo "</td><td>";
