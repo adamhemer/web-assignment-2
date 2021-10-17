@@ -82,7 +82,7 @@
               echo '<div class="shop-item">';
               // Anchor to make the whole section clickable
               echo '<a id="prd" href="product.php?product_id=' . $id . '">';
-              echo '<img src="img/prod/' . preg_replace("/\s/", "-", strtolower($name)) . '.png" alt="">';
+              echo '<img src="img/prod/' . $id . '.png" alt="">';
               echo '<h3 class="item-name">' . $name . '</h3>';
               echo '<h3 class="item-price">' . $price . '</h3>';
               echo '<p class="item-quantity">per ' . $size . 'g</p></a>';

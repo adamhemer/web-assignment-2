@@ -54,7 +54,7 @@
         <table class="content-table">
           <tr>
             <td class="center-image">
-              <img class="product-image" src="img/prod/<?php echo preg_replace("/\s/", "-", strtolower($product["name"])); ?>.png" alt="">
+              <img class="product-image" src="img/prod/<?php echo $product["product_id"]; ?>.png" alt="">
             </td>
             <td>
               <div class="product-info">
