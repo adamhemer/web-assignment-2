@@ -79,7 +79,7 @@
                     if ($row["invoice_no"] != $prev_invoice_no) {
                       $prev_invoice_no = $row["invoice_no"];
 
-                      echo '<td>' . $row["invoice_no"] . '</td>';
+                      echo '<td>' . substr(str_repeat(0, 3).$row["invoice_no"], - 4) . '</td>';
                       echo '<td>' . $row["holder_name"] . '</td>';
                       echo '<td>' . $row["total"] . '</td>';
                       echo '<td>' . $row["card_number"] . '</td>';
