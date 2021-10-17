@@ -1,0 +1,10 @@
+.banner-container {
+  position: relative;
+  top: 70px;
+  padding: 10px 0;
+  width: 50%;
+  background-color: rgb(64, 180, 142);
+  margin: auto;
+  text-align: center;
+  font-size: 36px;
+}

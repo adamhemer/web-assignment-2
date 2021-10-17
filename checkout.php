@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Template - DispensarySA</title>
+    <title>Checkout - DispensarySA</title>
     <meta
-      name="description"
-      content="A simple HTML5 Template for new projects."
+      name="Checkout"
+      content="Your Checkout"
     />
     <meta name="Group 10" content="DispensarySA" />
     <link rel="stylesheet" href="styles/style.css" />
@@ -124,6 +124,7 @@
             <p>Email: <a href="mailto:store@dispensarysa.com.au">store@dispensarysa.com.au</a></p>
             <p>Ph: <a href="tel:1800-420-420">1800 420 420</a></p>
           </td>
+          <td>
           <h3>Location</h3>
               <p>
                 <a href="https://goo.gl/maps/rCKphGHHkdzFn4vJ6"
