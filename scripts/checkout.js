@@ -40,12 +40,12 @@ function validateCard() {
 
         cardForm.submit();
     } else {
-        console.log(cardForm["name"]);
+        // Report to the user that the field is invalid
         if (!validName) {
-            nameInput.setCustomValidity("Please enter a valid name");
-            nameInput.reportValidity();
+            nameInput.setCustomValidity("Please enter a valid name");   // Sets the invalid message
+            nameInput.reportValidity(); // Shows the popup
         }
-        else if (!validNumber) {
+        else if (!validNumber) {    // Else used so the fields show up as invalid one at a time
             numberInput.setCustomValidity("Please enter a valid card number");
             numberInput.reportValidity();
         }
