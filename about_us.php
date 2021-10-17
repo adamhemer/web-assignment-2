@@ -12,6 +12,7 @@
       src="https://kit.fontawesome.com/089f98c1d5.js"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts/about_us.js"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -66,15 +67,16 @@
 
         require_once "lib/dbconn.php";
 
-        echo '<div class="subscribe-container">';
-        echo '<form action="lib/email-add.php" method="POST">';
+        echo '<div id="subscribe-container">';
+        echo '<form action="lib/email-add.php" method="POST" onsubmit="showMessage">';
         echo '<label for="email">Subscribe to our newsletter</label><br>';
         echo '<input type="email" placeholder="Enter your email here" name="email">';
+        echo '<p id="thankyou">Thankyou for subscribing!</p>';
         echo '</div>';
-
+        
         mysqli_close($conn);
       ?>
-
+      </div>
     </div>
     <!-- Page Content End -->
     <div class="footer">
@@ -82,7 +84,7 @@
         <tr>
           <td>
             <h3>About</h3>
-            <a href="about_us.html">About DispensarySA</a>
+            <a href="about_us.php">About DispensarySA</a>
           </td>
           <td>
             <h3>Contact Us</h3>

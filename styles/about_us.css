@@ -38,24 +38,30 @@
   height: 91vmin;
 }
 
-.subscribe-container {
+#subscribe-container {
   margin: auto;
   text-align: center;
   padding: 30px 0;
 }
 
-.subscribe-container label {
+#subscribe-container label {
   margin: 10px 0;
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.subscribe-container input {
+#subscribe-container input {
   width: 500px;
   font-size: 24px;
   margin: 15px 0;
   padding: 6px 10px;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#thankyou {
+  font-style: italic;
+  text-align: center;
+  display: none;
 }
 
 @media screen and (min-width: 0) and (max-width: 900px) {
