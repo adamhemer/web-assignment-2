@@ -38,13 +38,13 @@
             <!-- Credit card form, sends details to place-order.php via POST for processing -->
             <form id="credit-card-form" name="credit-card-form" action="lib/place-order.php" method="POST">
               <label for="name">Name on card</label><br>
-              <input name="name" type="text" placeholder="Name" maxlength=25 autocomplete="off" required><br>
+              <input name="name" type="text" placeholder="Name" maxlength=25 autocomplete="off" oninput="this.setCustomValidity('')" required><br>
               <label for="number">Card number</label><br>
-              <input name="number" type="text" placeholder="1111 2222 3333 4444" maxlength=19 autocomplete="off" required><br>
+              <input name="number" type="text" placeholder="1111 2222 3333 4444" maxlength=19 autocomplete="off" oninput="this.setCustomValidity('')" required><br>
               <label for="expiry">Expiry date</label><br>
-              <input name="expiry" type="text" placeholder="01/21" autocomplete="off" required><br>
+              <input name="expiry" type="text" placeholder="01/21" autocomplete="off" oninput="this.setCustomValidity('')" required><br>
               <label for="cvv">CVV</label><br>
-              <input name="cvv" type="text" placeholder="000" autocomplete="off" required>
+              <input name="cvv" type="text" placeholder="000" autocomplete="off" oninput="this.setCustomValidity('')" required>
             </form>
           </td>
           <td>

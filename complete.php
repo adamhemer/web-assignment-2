@@ -15,8 +15,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script src="scripts/cart.js"></script>
-    <script src="scripts/checkout.js"></script>
   </head>
   <body>
     <nav class="navbar">

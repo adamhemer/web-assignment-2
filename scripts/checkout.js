@@ -1,32 +1,61 @@
 
-const nameExp = /\w+/
+const nameExp = /\w+\s\w+/  // Checks for two words separated by whitespace
 const numberExp = /\d{16}/; // Checks for 16 digits
 const expiryExp = /(0[1-9]|1[0-2])\/\d{2}/; // Checks for (01-12)/(00-99)
-const cvvExp = /\d{3}/; // Checks for 3 digits
+const cvvExp = /\d{3}/; // Checks for 3 digits in a row
 
 
 function validateCard() {
 
     var cardForm = document.forms["credit-card-form"];
 
-    let number = cardForm["number"].value.replaceAll(' ', ''); // Get number and remove whitespace
-    let expiry = cardForm["expiry"].value.replaceAll(' ', '');
-    let cvv = cardForm["cvv"].value.replaceAll(' ', '');
+    // Get the input elements from the form
+    let nameInput = cardForm["name"];
+    let numberInput = cardForm["number"];
+    let expiryInput = cardForm["expiry"];
+    let cvvInput = cardForm["cvv"];
 
-    let validCard = number.match(numberExp) && number.length == 16;
-    let validExpiry = expiry.match(expiryExp);
-    let validCVV = cvv.match(cvvExp);
+    // Extract the values and normalise them
+    let name = nameInput.value;
+    let number = numberInput.value.replaceAll(' ', ''); // Get number and remove whitespace
+    let expiry = expiryInput.value.replaceAll(' ', '');
+    let cvv = cvvInput.value.replaceAll(' ', '');
 
-    console.log("card: " + validCard);
+    // Check the values against the regex expressions and lengths
+    let validName = name.match(nameExp) && name.length <= 25;
+    let validNumber = number.match(numberExp) && number.length == 16;
+    let validExpiry = expiry.match(expiryExp) && expiry.length == 5;
+    let validCVV = cvv.match(cvvExp) && cvv.length == 3;
+
+    console.log("name: " + validName);
+    console.log("card: " + validNumber);
     console.log("expiry: " + validExpiry);
     console.log("cvv: " + validCVV);
 
-    if (validCard && validExpiry && validCVV) {
+    if (validName && validNumber && validExpiry && validCVV) {
         // Set form values to whitespace filtered values
-        cardForm["number"].value = number;
-        cardForm["expiry"].value = expiry;
-        cardForm["cvv"].value = cvv;
+        numberInput.value = number;
+        expiryInput.value = expiry;
+        cvvInput.value = cvv;
 
         cardForm.submit();
+    } else {
+        console.log(cardForm["name"]);
+        if (!validName) {
+            nameInput.setCustomValidity("Please enter a valid name");
+            nameInput.reportValidity();
+        }
+        else if (!validNumber) {
+            numberInput.setCustomValidity("Please enter a valid card number");
+            numberInput.reportValidity();
+        }
+        else if (!validExpiry) {
+            expiryInput.setCustomValidity("Please enter a valid expiry");
+            expiryInput.reportValidity();
+        }
+        else if (!validCVV) {
+            cvvInput.setCustomValidity("Please enter a valid cvv");
+            cvvInput.reportValidity();
+        }
     }
 }
