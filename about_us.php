@@ -27,8 +27,44 @@
     </nav>
     <!-- Page Content Start -->
     <div class="main-content">
-      <div class="banner-container">
-        <h1>What we're about</h1>
+      <div class="backdrop-container">
+        <img src="img/about-us-images/backdrop.jpg" class="backdrop" />
+      </div>
+      <div class="maintext-backdrop">
+        <div class="maintext-flex">
+          <div class="about-container">
+            <h1>What we're about</h1>
+            <p>
+              DispensarySA is dedicated to supporting Australians in
+              experiencing the incredible healing potential of medicinal
+              cannabis. Our team collectively has over 30 years experience in
+              the cultivation and production of alternative therapies and we're
+              getting better every day! The opportunity to make a difference is
+              truly what gets us out of bed in the morning.
+            </p>
+            <p>Curious? Feel free to get in touch using the links below.</p>
+          </div>
+
+          <div class="ourpeople-container">
+            <h1>Our People</h1>
+            <p>
+              The staff at DispensarySA come from all walks of life, but
+              something that we all have in common is you. We've dedicated our
+              lives to discovering the most effective cannabinoid therapies for
+              an ever-growing list of conditions.
+            </p>
+            <p>
+              Now, we know it's true that we won't be able to help everyone. But
+              if you're not feeling 100%, you can bet that we'll try our best to
+              find a treatment for you.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="subscribe-container">
+        <div>
+          <h2>Subscribe to our newsletter</h2>
+        </div>
       </div>
     </div>
     <!-- Page Content End -->

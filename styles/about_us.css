@@ -1,10 +1,75 @@
-.banner-container {
+body {
+  background-color: blanchedalmond;
+}
+
+.main-content {
+  width: 100%;
+}
+
+.maintext-flex {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 40vh;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  padding: 5px 0;
+  width: 80%;
+}
+
+.maintext-flex div {
   position: relative;
-  top: 70px;
-  padding: 10px 0;
-  width: 50%;
-  background-color: rgb(64, 180, 142);
+  margin: 50px;
+  padding: 30px;
+  max-width: 30vw;
+  max-height: 45vh;
+  background-color: rgb(64, 180, 142, 0.4);
+  text-align: center;
+  border-radius: 30px;
+  font-size: 26px;
+}
+
+.backdrop-container {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.backdrop {
+  width: 100%;
+  filter: brightness(80%);
+  height: 68vmin;
+}
+
+.subscribe-container {
+  position: relative;
   margin: auto;
   text-align: center;
-  font-size: 36px;
+}
+
+@media screen and (min-width: 0) and (max-width: 900px) {
+  .maintext-flex {
+    width: 90% !important;
+  }
+  .maintext-flex div {
+    font-size: 13px !important;
+    margin: 30px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  .maintext-flex {
+    width: 90% !important;
+  }
+
+  .maintext-flex div {
+    font-size: 16px !important;
+    margin: 40px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1550px) {
+  .maintext-flex div {
+    font-size: 20px !important;
+  }
 }

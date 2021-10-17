@@ -95,12 +95,6 @@
   cursor: pointer;
 }
 
-.link {
-  color: rgb(76, 76, 209);
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 .grid-section img {
   position: relative;
   max-width: 100%;

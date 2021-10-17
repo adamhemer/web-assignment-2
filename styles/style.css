@@ -135,6 +135,12 @@ a {
   padding-right: 6px;
 }
 
+.link {
+  color: rgb(76, 76, 209);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 0px) and (max-width: 900px) {
   #logo-text {
     font-size: 30px !important;
