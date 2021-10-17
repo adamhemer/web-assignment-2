@@ -1,9 +1,23 @@
 <!DOCTYPE html>
+<?php
+  require_once "lib/dbconn.php";
+
+  $sql = 'SELECT * FROM Product WHERE product_id="' . $_GET["product_id"] . '";';
+
+  if ($result = mysqli_query($conn, $sql)) {
+    if (mysqli_num_rows($result) > 0) {
+      global $product;
+      $product = mysqli_fetch_assoc($result);
+    }
+    mysqli_free_result($result);
+  }
+  mysqli_close($conn);
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>- DispensarySA</title>
+    <title><?php echo $product["name"]; ?> - DispensarySA</title>
     <meta
       name="Product Page"
       content="View Product"
@@ -16,10 +30,6 @@
       src="https://kit.fontawesome.com/089f98c1d5.js"
       crossorigin="anonymous"
     ></script>
-    <script>
-      function setTitle(name){
-      document.title = `${name} ${document.title}`};
-    </script>
   </head>
 
   <body>
@@ -41,30 +51,12 @@
         <a href="">Product Name</a>
       </div>
       <div class="product-content">
-        <?php
-          require_once "lib/dbconn.php";
-
-          $sql = 'SELECT * FROM Product WHERE product_id="' . $_GET["product_id"] . '";';
-
-          if ($result = mysqli_query($conn, $sql)) {
-            if (mysqli_num_rows($result) > 0) {
-              global $product;
-              $product = mysqli_fetch_assoc($result);
-            }
-            mysqli_free_result($result);
-          }
-          mysqli_close($conn);
-        ?>
         <table class="content-table">
           <tr>
             <td class="center-image">
               <img class="product-image" src="img/prod/<?php echo $product["product_id"]; ?>.png" alt="">
             </td>
             <td>
-              <script type="text/javascript">
-                var productName = "<?php echo $product["name"]; ?>" // Add product name to title
-                setTitle(productName);
-              </script>
               <div class="product-info">
                 <h1><?php echo $product["name"]; ?></h1>
                 <h2>$<?php echo $product["price"]; ?><span id="quantity"> / <?php echo $product["size"]; ?>g</span></h2>
