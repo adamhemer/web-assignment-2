@@ -129,6 +129,12 @@ a {
   margin: 20px 0;
 }
 
+.socials {
+  margin-top: -10px;
+  font-size: 40px;
+  padding-right: 6px;
+}
+
 @media screen and (min-width: 0px) and (max-width: 900px) {
   #logo-text {
     font-size: 30px !important;
@@ -229,12 +235,6 @@ a {
     top: 0px !important;
     right: 0px !important;
   }
-}
-
-.socials {
-  margin-top: -10px;
-  font-size: 40px;
-  padding-right: 6px;
 }
 
 /* End of template */
