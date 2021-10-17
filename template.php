@@ -18,12 +18,12 @@
 
   <body>
     <nav class="navbar">
-      <a href="landing.html" id="logo-text">DispensarySA</a>
+      <a href="landing.php" id="logo-text">DispensarySA</a>
       <div class="navbar-right">
-        <a href="landing.html">Home <i class="fa fa-home"></i></a>
-        <a href="shop.html">Shop <i class="fa fa-shopping-bag"></i></a>
-        <a href="about_us.html">About <i class="fa fa-info-circle"></i></a>
-        <a href="cart.html">Cart <i class="fa fa-shopping-cart"></i></a>
+        <a href="landing.php">Home <i class="fa fa-home"></i></a>
+        <a href="shop.php">Shop <i class="fa fa-shopping-bag"></i></a>
+        <a href="about_us.php">About <i class="fa fa-info-circle"></i></a>
+        <a href="cart.php">Cart <i class="fa fa-shopping-cart"></i></a>
       </div>
     </nav>
     <div class="main-content">
@@ -34,7 +34,7 @@
         <tr>
           <td>
             <h3>About</h3>
-            <a href="about_us.html">About DispensarySA</a>
+            <a href="about_us.php">About DispensarySA</a>
           </td>
           <td>
             <h3>Contact Us</h3>

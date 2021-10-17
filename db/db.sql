@@ -36,6 +36,11 @@ CREATE TABLE ProductInvoice (
     PRIMARY KEY (invoice_no, product_id)
 );
 
+CREATE TABLE SubscriberEmails (
+    email	VARCHAR(50),
+    PRIMARY KEY (email)
+);
+
 CREATE user IF NOT EXISTS dbadmin@localhost;
 GRANT all privileges ON *.* TO dbadmin@localhost;
 

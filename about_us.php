@@ -15,11 +15,11 @@
   </head>
   <body>
     <nav class="navbar">
-      <a href="landing.html" id="logo-text">DispensarySA</a>
+      <a href="landing.php" id="logo-text">DispensarySA</a>
       <div class="navbar-right">
-        <a href="landing.html">Home <i class="fa fa-home"></i></a>
+        <a href="landing.php">Home <i class="fa fa-home"></i></a>
         <a href="shop.php">Shop <i class="fa fa-shopping-bag"></i></a>
-        <a class="navbar-active" href=""
+        <a class="navbar-active" href="about_us.php"
           >About <i class="fa fa-info-circle"></i
         ></a>
         <a href="cart.php">Cart <i class="fa fa-shopping-cart"></i></a>
@@ -42,7 +42,7 @@
               getting better every day! The opportunity to make a difference is
               truly what gets us out of bed in the morning.
             </p>
-            <p>Curious? Feel free to get in touch using the links below.</p>
+            <p>Curious? Subscribe to our mailing list for the latest news.</p>
           </div>
 
           <div class="ourpeople-container">
@@ -61,11 +61,20 @@
           </div>
         </div>
       </div>
-      <div class="subscribe-container">
-        <div>
-          <h2>Subscribe to our newsletter</h2>
-        </div>
-      </div>
+
+      <?php
+
+        require_once "lib/dbconn.php";
+
+        echo '<div class="subscribe-container">';
+        echo '<form action="lib/email-add.php" method="POST">';
+        echo '<label for="email">Subscribe to our newsletter</label><br>';
+        echo '<input type="email" placeholder="Enter your email here" name="email">';
+        echo '</div>';
+
+        mysqli_close($conn);
+      ?>
+
     </div>
     <!-- Page Content End -->
     <div class="footer">
