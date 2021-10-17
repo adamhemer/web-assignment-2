@@ -13,10 +13,10 @@
     <meta name="Group 10" content="DispensarySA" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/invoices.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <script
+      src="https://kit.fontawesome.com/089f98c1d5.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="scripts/cart.js"></script>
     <script src="scripts/checkout.js"></script>
   </head>
@@ -117,18 +117,26 @@
             <p>Email: <a href="mailto:store@dispensarysa.com.au">store@dispensarysa.com.au</a></p>
             <p>Ph: <a href="tel:1800-420-420">1800 420 420</a></p>
           </td>
-          <td>
-            <h3>Follow Us</h3>
-            <p><a href="https://www.facebook.com">Facebook</a></p>
-            <p><a href="https://www.instagram.com">Instagram</a></p>
-            <p><a href="https://www.twitter.com">Twitter</a></p>
-          </td>
-          <td>
-            <h3>Location</h3>
-            <p><a href="https://goo.gl/maps/rCKphGHHkdzFn4vJ6">420 King William Street</a></p>
-            <p>Adelaide</p>
-            <p>SA 5000</p>
-          </td>
+          <h3>Location</h3>
+              <p>
+                <a href="https://goo.gl/maps/rCKphGHHkdzFn4vJ6"
+                  >420 King William Street</a
+                >
+              </p>
+              <p>Adelaide SA, 5000</p>
+            </td>
+            <td>
+              <h3>Follow Us</h3>
+              <a href="https://www.facebook.com">
+                <i class="fab fa-facebook-square socials"></i
+              ></a>
+              <a href="https://www.instagram.com"
+                ><i class="fab fa-instagram-square socials"></i
+              ></a>
+              <a href="https://www.twitter.com"
+                ><i class="fab fa-twitter-square socials"></i
+              ></a>
+            </td>
         </tr>
       </table>
       <div class="footer-base">
