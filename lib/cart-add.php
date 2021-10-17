@@ -3,7 +3,9 @@
 require_once "dbconn.php"; 
 
 // Adds the item to the cart or if it is already in the cart it sums the quantities.
-$sql = 'INSERT INTO Cart (product_id, quantity) VALUES (?, ?) ON DUPLICATE KEY UPDATE quantity = quantity + ?;';
+$sql = 'INSERT INTO Cart (product_id, quantity)
+        VALUES (?, ?)
+        ON DUPLICATE KEY UPDATE quantity = quantity + ?;';
 
 // Checks that a product_id was provided
 if (isset($_POST["product_id"])) {
