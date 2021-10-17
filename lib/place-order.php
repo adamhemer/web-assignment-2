@@ -67,7 +67,4 @@ if (isset($_POST["name"], $_POST["number"], $_POST["expiry"], $_POST["cvv"])) {
     header("location: ../complete.php?invoice_no=" . $invoice_no);
 }
 
-
-
-
 mysqli_close($conn);
