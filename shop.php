@@ -65,13 +65,6 @@
             </div>
           </td>
           <td id="prdl" class="shop-products">
-            <!-- <a id="prd" href="#" class="shop-item">
-              <img src="img/placeholder.png" alt="">
-              <h3 class="item-name">Product Name</h3>
-              <h3 class="item-price">$19.99</h3>
-              <p class="item-quantity">per 100g</p>
-              <button>Add to cart</button>
-            </a> -->
             <?php
             require_once "lib/dbconn.php";
 
