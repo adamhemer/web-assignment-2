@@ -62,20 +62,13 @@
           </div>
         </div>
       </div>
-
-      <?php
-
-        require_once "lib/dbconn.php";
-
-        echo '<div id="subscribe-container">';
-        echo '<form action="lib/email-add.php" method="POST" onsubmit="showMessage">';
-        echo '<label for="email">Subscribe to our newsletter</label><br>';
-        echo '<input type="email" placeholder="Enter your email here" name="email">';
-        echo '<p id="thankyou">Thankyou for subscribing!</p>';
-        echo '</div>';
-        
-        mysqli_close($conn);
-      ?>
+        <div id="subscribe-container">
+          <form action="lib/email-add.php" method="POST" onsubmit="showMessage">
+            <label for="email">Subscribe to our newsletter</label><br>
+            <input type="email" placeholder="Enter your email here" name="email">
+          </form>
+          <p id="thankyou">Thankyou for subscribing!</p>
+        </div>
       </div>
     </div>
     <!-- Page Content End -->

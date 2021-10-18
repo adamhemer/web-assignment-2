@@ -2,8 +2,10 @@
 
     require_once "dbconn.php"; 
 
-    // Adds the email to the mailing list
-    $sql = 'INSERT INTO SubscriberEmails(email)
+    echo $_POST["email"];
+
+    // Adds the email to the mailing list, 'IGNORE' will ignore duplicate entries rather than erroring
+    $sql = 'INSERT IGNORE INTO SubscriberEmails(email)
             VALUES (?);';
 
     // Checks that an email was provided
@@ -15,7 +17,7 @@
         $success = mysqli_stmt_execute($statement);
         if ($success) {
             // Redirects back to the about us page if successful
-            header("location: ../about_us.php#subscribe-container");
+            header("location: ../about_us.php?subscribed=true");
             
         } else {
             echo mysqli_error($conn);
