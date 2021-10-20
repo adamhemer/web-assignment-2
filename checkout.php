@@ -108,6 +108,7 @@
           </td>
         </tr>
       </table>
+      <a class="continue-shopping" href="cart.php">Back to cart</a>
       <!-- Submit button for the checkout, the js will check the card inputs before submitting the form -->
       <button class="checkout-button" onclick="validateCard()">Place Order</button>
     </div>
