@@ -45,7 +45,7 @@
     width: 5%;
 }
 
-.checkout-button, .remove-button {
+.checkout-button, .remove-button, .continue-shopping {
     width: 20%;
     margin: 0 1%;
     float: right;
@@ -57,6 +57,13 @@
     border: 1px solid var(--tertiary-colour);
     border-radius: 8px;
     outline: none;
+}
+
+.continue-shopping {
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    background-color: #efefef;
 }
 
 .remove-button {
@@ -73,7 +80,7 @@
     color: black;
 }
 
-.checkout-button:hover {
+.checkout-button:hover, .continue-shopping:hover {
     background-color: var(--primary-colour);
     color: white;
 }

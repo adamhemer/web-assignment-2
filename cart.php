@@ -88,6 +88,7 @@
           <td id="cart-total" style="font-weight: bold;">?</td>
         </tfoot>
       </table>
+      <a class="continue-shopping" href="shop.php">Continue Shopping</a>
       <form action="checkout.php">
           <input class="checkout-button" type="submit" value="Checkout">
       </form>
