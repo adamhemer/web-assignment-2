@@ -118,7 +118,7 @@
               </p>
               <button
                 class="grid-button"
-                onclick="window.open('about_us.html', '_self')"
+                onclick="window.open('about_us.php', '_self')"
               >
                 Learn More About Us >
               </button>
