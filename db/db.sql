@@ -10,7 +10,7 @@ CREATE TABLE Product (
     price       DECIMAL(4, 2),
     size        INT,
     name        varchar(100),
-    description VARCHAR(200)
+    description VARCHAR(300)
 );
 
 CREATE TABLE Cart (
