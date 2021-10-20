@@ -32,7 +32,7 @@
         <h3>Order placed!</h3>
         <!-- Grab the invoice number from the URL and display it -->
         <h3>Your order number is <?php echo '#'; printf("%04d", $_GET["invoice_no"]); ?></h3>
-        <a href="landing.html">Homepage</a>
+        <a href="landing.php">Homepage</a>
       </div>
     </div>
     <!-- Page Content End -->
