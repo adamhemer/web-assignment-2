@@ -72,9 +72,9 @@ function filter(element) {
 
 function setCategory(category) {    // Takes a string and filters for matching IDs
     let index = categoryFilters.indexOf(category);    // Find it in the filter array, -1 if not in the array
-    if (index == -1) {  // Strain is not in the array
-        categoryFilters.push(category)    // Add it
-    } else {    // Strain is in the array
+    if (index == -1) {                      // Strain is not in the array
+        categoryFilters.push(category)      // Add it
+    } else {                                // Strain is in the array
         categoryFilters.splice(index, 1)    // Remove it
     }
     sort(sortMode); // Re-sort
@@ -82,9 +82,9 @@ function setCategory(category) {    // Takes a string and filters for matching I
 
 function setStrain(strain) {    // Takes a string and filters for descriptions containing it
     let index = strainFilters.indexOf(strain);    // Find it in the filter array, -1 if not in the array
-    if (index == -1) {  // Strain is not in the array
-        strainFilters.push(strain)    // Add it
-    } else {    // Strain is in the array
+    if (index == -1) {                  // Strain is not in the array
+        strainFilters.push(strain)      // Add it
+    } else {                            // Strain is in the array
         strainFilters.splice(index, 1)  // Remove it
     }
     sort(sortMode); // Re-sort
