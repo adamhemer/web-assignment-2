@@ -15,7 +15,8 @@ CREATE TABLE Product (
 
 CREATE TABLE Cart (
     product_id  CHAR(4) NOT NULL PRIMARY KEY,
-    quantity    INT
+    quantity    INT,
+    FOREIGN KEY (product_id) REFERENCES Product(product_id)
 );
 
 CREATE TABLE Invoice (
