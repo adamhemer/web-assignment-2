@@ -16,7 +16,8 @@
       src="https://kit.fontawesome.com/089f98c1d5.js"
       crossorigin="anonymous"
     ></script>
-    <script>
+    <script src="scripts/landing.js"></script>
+    <!-- <script>
       /* When the user hovers over the linked text, 
       show the dropdown content */
       function showMenu() {
@@ -38,7 +39,7 @@
           });
         }
       };
-    </script>
+    </script> -->
   </head>
 
   <body>
