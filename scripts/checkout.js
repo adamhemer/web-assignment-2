@@ -7,6 +7,14 @@ const cvvExp = /\d{3}/; // Checks for 3 digits in a row
 
 function validateCard() {
 
+    // Get the total order cost and check if the order is empty
+    var total = parseFloat(document.getElementById("hidden-total").innerText);
+    if (total == 0) {
+        alert("No items in the cart!");
+        return;
+    }
+
+    // Get the form object
     var cardForm = document.forms["credit-card-form"];
 
     // Get the input elements from the form

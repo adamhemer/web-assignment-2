@@ -1,5 +1,6 @@
 <!-- This page is not part of the website and is simply for demonstration purposes to -->
 <!-- show that the invoices are being stored and linked to the products correctly. -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,18 +51,23 @@
           <?php
             require_once "lib/dbconn.php";
             // Join the Invoice, ProductInvoice and Product tables to get the products linked to each invoice
-            $sql = '
+            $sql_invoices = '
               SELECT i.invoice_no, i.holder_name, i.total, i.card_number, i.expiry, i.cvv, p.product_id, p.name, pi.quantity
               FROM Invoice i, ProductInvoice pi, Product p
               WHERE i.invoice_no = pi.invoice_no
               AND pi.product_id = p.product_id;
             ';
 
+            $sql_emails = '
+              SELECT *
+              FROM SubscriberEmails;
+            ';
+
             $colour_alternate = false;
             $prev_invoice_no = 0;
 
             // Read through the results and print out each invoice and the assosciated products
-            if ($result = mysqli_query($conn, $sql)) {
+            if ($result = mysqli_query($conn, $sql_invoices)) {
               if (mysqli_num_rows($result) > 0) {
                   while ($row = mysqli_fetch_assoc($result)) {
                     // Check if the colour should alternate (new invoice)
@@ -98,8 +104,40 @@
               }
               mysqli_free_result($result);
             }
-            mysqli_close($conn);
+          ?>
+        </tbody>
+      </table>
+      <table class="invoice-pane">
+        <thead>
+          <tr>
+            <th>email</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php
 
+            $sql_emails = '
+              SELECT *
+              FROM SubscriberEmails;
+            ';
+
+            $colour_alternate = false;
+
+            if ($result = mysqli_query($conn, $sql_emails)) {
+              if (mysqli_num_rows($result) > 0) {
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    $colour_alternate = !$colour_alternate;
+                    if ($colour_alternate) {
+                      echo '<tr class="colour-a">';
+                    } else {
+                      echo '<tr class="colour-b">';
+                    }
+                    echo '<td>' . $row["email"] . '</td></tr>';
+                  }
+              }
+              mysqli_free_result($result);
+            }
+            mysqli_close($conn);
           ?>
         </tbody>
       </table>

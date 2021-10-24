@@ -90,9 +90,9 @@
               echo '</div>';
             }
 
-            if ($result = mysqli_query($conn, $sql)) {
-                if (mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
+            if ($result = mysqli_query($conn, $sql)) {            // If a result was returned from the query
+                if (mysqli_num_rows($result) > 0) {               // And the result contains data
+                    while ($row = mysqli_fetch_assoc($result)) {  // Iterate the data until it runs out
                         product($row["product_id"], $row["price"], $row["size"], $row["name"], $row["description"]);
                     }
                 }
